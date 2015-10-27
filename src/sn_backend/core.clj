@@ -4,7 +4,8 @@
             [ring.util.response :refer :all]
             [ring.middleware.json :refer :all]
             [ring.middleware.reload :refer :all]
-            [ring.middleware.stacktrace :refer :all])
+            [ring.middleware.stacktrace :refer :all]
+            [sn-backend.db :as db])
   (:gen-class))
 
 ;; @TODO
@@ -35,6 +36,7 @@
 ;; returns a response depending on the requested resource.
 (defroutes handler
   (GET "/" [] (response {}))
+  (GET "/movie" [] (response (db/list-all)))
   (POST "/movie" request
         (register-movie request))
   (PUT "/movie" request

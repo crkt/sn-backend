@@ -8,4 +8,5 @@
                  [ring "1.4.0"]
                  [ring/ring-json "0.4.0"]
                  [compojure "1.4.0"]
+                 [mysql/mysql-connector-java "5.1.18"]
                  ])
