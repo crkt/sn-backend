@@ -7,6 +7,11 @@
             [ring.middleware.stacktrace :refer :all])
   (:gen-class))
 
+;; @TODO
+;; Abstract the register function to be handeld in a different scope?
+;; Add validation of the Movie model
+;; Add all the routes needed for the application
+;; Add search possibilites
 
 ;; register-movie : request map (json) -> response (json)
 ;; takes a json request with movie data and creates a map of it
@@ -18,6 +23,13 @@
         genre (get-in req [:body :genre])]
     (response {:title title :year year :runtime runtime :genre genre})))
 
+;; search-for-movie : request map (json) -> response (json)
+;; search for a movie with a json body of attributes to search for
+;; the response is a json array of all the results.
+;; {movies: [m1,m2,m3........m100]};
+(defn search-for-movie [req]
+  (response {:title "ASDF" :year "1993" :runtime "123" :genre "[\"Action\",\"Drama\""}))
+
 ;; handler : void -> response
 ;; the routing of the application
 ;; returns a response depending on the requested resource.
@@ -25,6 +37,8 @@
   (GET "/" [] (response {}))
   (POST "/movie" request
         (register-movie request))
+  (PUT "/movie" request
+       (search-for-movie request))
   (route/not-found "The requested resource does not exist"))
 
 
