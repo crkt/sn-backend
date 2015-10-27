@@ -4,7 +4,7 @@ The sortnight backend, designed to handle requests and add movies to a database.
 
 ## Usage
 
-### How ro run
+### How to run
 You need to install [leiningen](http://leiningen.org/)
 You will also need to install [Clojure](http://clojure.org/getting_started)
 
