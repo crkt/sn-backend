@@ -5,6 +5,7 @@
             [ring.middleware.json :refer :all]
             [ring.middleware.reload :refer :all]
             [ring.middleware.stacktrace :refer :all]
+            [ring.adapter.jetty :refer :all]
             [sn-backend.db :as db])
   (:gen-class))
 
@@ -56,6 +57,7 @@
    (wrap-stacktrace)))
 
 
-
+(defn -main []
+  (run-jetty #'app {:port 3000}))
 
 
