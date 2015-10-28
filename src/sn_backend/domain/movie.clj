@@ -10,4 +10,6 @@
 ;; defrecord Movie,
 ;; The movie with corresponding fields
 ;; https://clojuredocs.org/clojure.core/defrecord
-(defrecord Movie [title year runtime genre])
+(defrecord Movie [id title year runtime genres])
+
+
