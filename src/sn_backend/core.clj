@@ -6,7 +6,8 @@
             [ring.middleware.reload :refer :all]
             [ring.middleware.stacktrace :refer :all]
             [ring.adapter.jetty :refer :all]
-            [sn-backend.db :as db])
+            [sn-backend.db :as db]
+            [sn-backend.domain.movie :refer :all])
   (:gen-class))
 
 ;; @TODO
@@ -19,11 +20,12 @@
 ;; takes a json request with movie data and creates a map of it
 ;; to the register it in the database.
 (defn register-movie [req]
-  (let [title (get-in req [:body :title])
-        year (get-in req [:body :year])
-        runtime (get-in req [:body :runtime])
-        genre (get-in req [:body :genre])]
-    (response {:title title :year year :runtime runtime :genre genre})))
+  (let [m (->Movie 0
+                   (get-in req [:body :title])
+                   (get-in req [:body :year])
+                   (get-in req [:body :runtime])
+                   (get-in req [:body :genres]))]
+    (response (db/add-movie m))))
 
 ;; search-for-movie : request map (json) -> response (json)
 ;; search for a movie with a json body of attributes to search for
