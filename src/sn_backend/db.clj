@@ -1,5 +1,5 @@
 (ns sn-backend.db
-  (:require [sn-backend.domain.movie :as movie]
+  (:require [sn-backend.domain.movie :refer :all]
             [clojure.java.jdbc :refer :all :as jdbc])
   (:gen-class))
 
@@ -21,11 +21,34 @@
            :user "phcr"
            :password "awt800"}))
 
+
+
+
+;; get-movie-genres : string -> sequence
+;; get's all the genres of a movie, returns a sequence of genres
+(defn get-movie-genres [id]
+  (with-db-connection [db-con *db*]
+    (jdbc/query db-con ["select genre from genre join (select genre_id from movie_genre where movie_id=?) as gm
+       on (gm.genre_id = genre.id)" id])))
+
+
+(defn create-movie [row]
+  (let [genres (get-movie-genres (:id row))
+        m (->Movie (:id row)
+                  (:title row)
+                  (:year row)
+                  (:runtime row)
+                  genres)]
+    m))
+
 ;; Test code for the database.
 ;; Will be removed later.
 (defn list-all []
   (with-db-connection [db-con *db*]
-    (jdbc/query db-con ["select * from movie"])))
+    (let [rs (jdbc/query db-con ["select * from movie"])]
+      (map create-movie rs))))
+
+
 
 
 ;; add-movie : map -> boolean
