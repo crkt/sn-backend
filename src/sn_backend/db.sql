@@ -34,3 +34,8 @@ insert into movie_genre (movie_id, genre_id) values (1,7);
 
 select genre from genre join (select genre_id from movie_genre where movie_id=1) as gm
        on (gm.genre_id = genre.id);
+
+
+select * from movie where in (select * from movie_genre where genre_id = ?);
+
+select * from movie where id in (select movie_id from movie_genre where genre_id in (select id from genre where genre = 'action'))

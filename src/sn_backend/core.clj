@@ -19,20 +19,20 @@
 ;; register-movie : request map (json) -> response (json)
 ;; takes a json request with movie data and creates a map of it
 ;; to the register it in the database.
-(defn register-movie [req]
-  (let [m (->Movie 0
-                   (get-in req [:body :title])
-                   (get-in req [:body :year])
-                   (get-in req [:body :runtime])
-                   (get-in req [:body :genres]))]
-    (response (db/add-movie m))))
+;;                   (get-in req [:body :title])
+;;                   (get-in req [:body :year])
+;;                   (get-in req [:body :runtime])
+;;                   (get-in req [:body :genres])
+
 
 ;; search-for-movie : request map (json) -> response (json)
 ;; search for a movie with a json body of attributes to search for
 ;; the response is a json array of all the results.
 ;; {movies: [m1,m2,m3........m100]};
 (defn search-for-movie [req]
-  (response {:title "ASDF" :year "1993" :runtime "123" :genre "[\"Action\",\"Drama\""}))
+  (println (get-in req [:body :genres]))
+  (println "result from db" (db/search-for-genre (first (get-in req [:body :genres]))))
+  (response (db/search-for-genre (first (get-in req [:body :genres])))))
 
 ;; handler : void -> response
 ;; the routing of the application
@@ -40,9 +40,7 @@
 (defroutes handler
   (GET "/" [] (response {}))
   (GET "/movie" [] (response (db/list-all)))
-  (POST "/movie" request
-        (register-movie request))
-  (PUT "/movie" request
+  (PUT "/search/movie" request
        (search-for-movie request))
   (route/not-found "The requested resource does not exist"))
 
@@ -52,9 +50,8 @@
 ;; uses ring and compojure handlers to handle routing.
 (def app
   (-> 
-   handler
+   (wrap-json-response handler)
    (wrap-json-body {:keywords? true :bigdecimals? true})
-   (wrap-json-response)
    (wrap-reload '[sn-backend.core])
    (wrap-stacktrace)))
 
