@@ -31,8 +31,8 @@
 ;; {movies: [m1,m2,m3........m100]};
 (defn search-for-movie [req]
   (println (get-in req [:body :genres]))
-  (println "result from db" (db/search-for-genre (first (get-in req [:body :genres]))))
-  (response (db/search-for-genre (first (get-in req [:body :genres])))))
+  (println "result from db" (db/search-for-genres (get-in req [:body :genres])))
+  (response (db/search-for-genres (get-in req [:body :genres]))))
 
 ;; handler : void -> response
 ;; the routing of the application

@@ -22,26 +22,24 @@
            :user "phcr"
            :password "awt800"}))
 
-;; get-genres : map : list
-;; returns just the value of the genre key
-(defn get-genres [row]
-  (:genre row))
-
-(defn get-genre-id [row]
-  (:id row))
-
-(defn get-value-for-key [row key]
-  (:key row))
-
-;; get's all the genres of a movie, returns a sequence of genres
 (defn get-movie-genres [id]
+  "get's all the genres of a movie, returns a sequence of genres"
   (with-db-connection [db-con *db*]
     (jdbc/query db-con ["select genre from genre join (select genre_id from movie_genre where movie_id=?) as gm on (gm.genre_id = genre.id)" id])))
+
+(defn params-sql-query [sql params]
+  "Creates a sql vector that the jdbc expects, changes all symbols into strings in the parameters"
+  (into [] (flatten (cons sql (map str params)))))
+
+(defn add-args-to-query [lst]
+  "Adds all the ? needed in the preparedStatement, lst is the arguments to count"
+  (clojure.string/join ", " (take (count lst) (repeat "?"))))
 
 ;; create-movie : map -> Movie
 ;; takes a map of values for a movie
 ;; return a new Movie record.
 (defn create-movie [row]
+  "creates a movie record with a row from the database"
   (let [genres (get-movie-genres (:id row))
         m (->Movie (:id row)
                    (:title row)
@@ -50,31 +48,29 @@
                    genres)]
     m))
 
-;; Test code for the database.
-;; Will be removed later.
-(defn list-all []
-  (with-db-connection [db-con *db*]
-    (let [rs (jdbc/query db-con ["select * from movie"])]
-      (map create-movie rs))))
-
 ;; search-movie : map -> movies
 ;; searches the database for movies with the attributes in the search.
 ;; returns the result of all the movie found.
 (defn search-movie [attributes])
 
-(defn search-for-genre [genre]  
+(defn search-for-genres [genres]
+  "Expects a vector of genres, [\"action\" \"drama\"]"
   (with-db-connection [db-con *db*]
-    (let [rs (jdbc/query db-con
-              ["select * from movie where id in
-               (select movie_id from movie_genre where genre_id in 
-               (select id from genre where genre in " (lower-case genre)])]
+    ;; the query is a sql vector query [sql-query & params]
+    (let [query (params-sql-query
+                 (str
+                  "select * from movie where id in "
+                  "(select movie_id from movie_genre where genre_id in "
+                  "(select id from genre where genre in (" 
+                  (add-args-to-query genres) ")))")
+                 genres)
+          ;; store the result in the rs
+          rs (jdbc/query db-con query)]
+      ;; create movies of all the rows retrieved from the database
       (map create-movie rs))))
 
 
-(defn format-to-sql-q [lst]
-  (str "select * from movie where id in
-               (select movie_id from movie_genre where genre_id in 
-               (select id from genre where genre in (" (clojure.string/join "," (take (count lst) (repeat "?"))) ")"))
+
 
 ;; delete-movie : string -> boolean
 ;; delets the movie in the database with the id supplied.
