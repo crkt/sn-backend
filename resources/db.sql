@@ -51,4 +51,4 @@ insert into movie_genre (movie_id, genre_id) values (4,2);
 insert into movie_genre (movie_id, genre_id) values (4,8);
 
 
-select genre from genre join (select genre_id from movie_genre where movie_id=?) as gm on (gm.genre_id = genre.id);
+
