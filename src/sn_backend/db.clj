@@ -1,6 +1,6 @@
 (ns sn-backend.db
   (:require [sn-backend.domain.movie :refer :all]
-            [clojure.string :refer :all]
+            [clojure.string :refer :all :as string]
             [clojure.java.jdbc :refer :all :as jdbc])
   (:gen-class))
 
@@ -67,9 +67,14 @@
     (let [rs (jdbc/query db-con
               ["select * from movie where id in
                (select movie_id from movie_genre where genre_id in 
-               (select id from genre where genre = ?));" (lower-case genre)])]
+               (select id from genre where genre in " (lower-case genre)])]
       (map create-movie rs))))
 
+
+(defn format-to-sql-q [lst]
+  (str "select * from movie where id in
+               (select movie_id from movie_genre where genre_id in 
+               (select id from genre where genre in (" (clojure.string/join "," (take (count lst) (repeat "?"))) ")"))
 
 ;; delete-movie : string -> boolean
 ;; delets the movie in the database with the id supplied.
