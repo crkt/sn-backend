@@ -31,7 +31,8 @@ mysql -u root
 
 Once inside the database you need to create the sortnight database:
 ```
-CREATE DATABASE 'sortnight;
+CREATE DATABASE sortnight;
+USE sortnight;
 ```
 
 Then create a sortnight user and give it access to the database:
