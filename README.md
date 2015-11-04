@@ -39,7 +39,7 @@ Then create a sortnight user and give it access to the database:
 ```
 CREATE USER 'sortnight'@'localhost';
 SET PASSWORD FOR 'sortnight'@'localhost' = PASSWORD('secret');
-GRANT ALL ON sortnight TO 'sortnight'@'localhost';
+GRANT ALL ON sortnight.* TO 'sortnight'@'localhost';
 ```
 
 The users name is: sortnight, and it's password is "secret".
