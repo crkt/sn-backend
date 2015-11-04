@@ -54,7 +54,7 @@
 (defn search-movie [attributes])
 
 (defn search-for-genres [genres]
-  "Expects a vector of genres, [\"action\" \"drama\"]"
+  "Expects a vector of genres, [action drama]"
   (with-db-connection [db-con *db*]
     ;; the query is a sql vector query [sql-query & params]
     (let [query (params-sql-query
@@ -67,6 +67,7 @@
           ;; store the result in the rs
           rs (jdbc/query db-con query)]
       ;; create movies of all the rows retrieved from the database
+      (println query)
       (map create-movie rs))))
 
 
