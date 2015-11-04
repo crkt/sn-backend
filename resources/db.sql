@@ -11,12 +11,14 @@ create table genre (id integer AUTO_INCREMENT PRIMARY KEY,
 create table movie (id integer AUTO_INCREMENT PRIMARY KEY, 
                    title varchar(50), 
                    year integer, 
+                   description text,
                    runtime integer);
 
 create table movie_genre (movie_id integer, 
                          genre_id integer,
                          FOREIGN KEY (movie_id) REFERENCES movie(id),
                          FOREIGN KEY (genre_id) REFERENCES genre(id));
+
 
 insert into genre (genre) values ('action');
 insert into genre (genre) values ('drama');
@@ -52,3 +54,8 @@ insert into movie_genre (movie_id, genre_id) values (4,8);
 
 
 
+
+select * from movie where id in 
+                 (select movie_id from movie_genre where genre_id in
+                 (select id from genre where genre in ('crime','drama')))
+                 and runtime < 127;

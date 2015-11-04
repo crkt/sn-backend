@@ -64,10 +64,25 @@
           ;; store the result in the rs
           rs (jdbc/query db-con query)]
       ;; create movies of all the rows retrieved from the database
+      ;; remove println later on, currently only for debugging.
       (println query)
       (map create-movie rs))))
 
 
 (defn search-movie 
-  "Unsupported function"
-  [attributes])
+  ": genre the genres to search for
+   : runtime the runtime the movie must have
+   : year the year the movie must have"
+  [genres runtime]
+  (with-db-connection [db-con *db*]
+    (let [query (params-sql-query
+                 (str
+                  "select * from movie where id in "
+                  "(select movie_id from movie_genre where genre_id in"
+                  "(select id from genre where genre in ("
+                  (add-args-to-query genres) ")))"
+                  "and runtime < ? ")
+                 (conj genres runtime))
+          rs (jdbc/query db-con query)]
+      (println query)
+      (map create-movie rs))))
