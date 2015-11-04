@@ -39,7 +39,6 @@
 ;; returns a response depending on the requested resource.
 (defroutes handler
   (GET "/" [] (response {}))
-  (GET "/movie" [] (response (db/list-all)))
   (PUT "/search/movie" request
        (search-for-movie request))
   (route/not-found "The requested resource does not exist"))
