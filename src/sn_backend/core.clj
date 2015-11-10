@@ -25,7 +25,7 @@
 (defroutes  handler
   (GET "/" [] (response {}))
   (PUT "/search/movie" request
-       (search-for-movie request))
+       (search-movie request))
   (route/not-found "The requested resource does not exist"))
 
 
