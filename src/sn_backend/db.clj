@@ -4,12 +4,16 @@
             [clojure.java.jdbc :refer :all :as jdbc])
   (:gen-class))
 
+;; update-in
+;; defonce
+
+
 ;; Creates a global database variable.
 ;; earmuffs since it's global.
 (let [db-host "localhost"
       db-port 3306
       db-name "sortnight"]
-  (def *db* {:classname "com.mysql.jdbc.Driver"
+  (defonce *db* {:classname "com.mysql.jdbc.Driver"
            :subprotocol "mysql"
            :subname (str "//" db-host ":" db-port "/" db-name)
            :user "sortnight"
