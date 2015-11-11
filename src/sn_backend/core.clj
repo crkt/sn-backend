@@ -6,8 +6,7 @@
             [ring.middleware.reload :refer :all]
             [ring.middleware.stacktrace :refer :all]
             [ring.adapter.jetty :refer :all]
-            [sn-backend.db :as db]
-            [sn-backend.domain.movie :refer :all])
+            [sn-backend.db :as db])
   (:gen-class))
 
 ;; search-for-movie : request map (json) -> response (json)
@@ -15,9 +14,10 @@
   "Searches for a movie in the database with a request object.
   The response is an json array of movie objects."
   [req]
-  (println (get-in req [:body :genres]))
-  (println "result from db" (db/search-for-genres (get-in req [:body :genres])))
-  (response (db/search-for-genres (get-in req [:body :genres]))))
+  (let [genres (:genres (:body req))
+        runtime (:runtime (:body req))
+        year (:year (:body req))]
+    (response (db/all-movie-with-attributes genres runtime year))))
 
 ;; handler : nil -> response
 ;; the routing of the application
@@ -25,7 +25,7 @@
 (defroutes  handler
   (GET "/" [] (response {}))
   (PUT "/search/movie" request
-       (search-movie request))
+       (search-for-movie request))
   (route/not-found "The requested resource does not exist"))
 
 

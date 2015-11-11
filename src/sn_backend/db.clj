@@ -1,8 +1,6 @@
 (ns sn-backend.db
-  (:require [korma.core :refer :all]
-            [korma.db :refer :all]
-            [clojure.string :refer :all :as string]
-            [clojure.java.jdbc :refer :all :as jdbc])
+  (:require [korma.core :refer :all :rename {update sql-update}]
+            [korma.db :refer :all])
   (:gen-class))
 
 ;;*****************************************************
@@ -56,7 +54,6 @@
                         (join "movie_genre" (= :movie_genre.movie_id id))
                         (where (= :genre.id :movie_genre.genre_id))))))
 
-
 ;;*****************************************************
 ;; Movie Record creation
 ;;*****************************************************
@@ -76,10 +73,34 @@
 ;; Search queries
 ;;*****************************************************
 
-;; all-movies-with-genres : vector -> seq
+;; all-movies-with-genres : vector -> seq(movie)
 (defn all-movie-with-genres 
   "Returns movie objects with the genres specified.
   [crime drama] -> (#movieObj #movieObj)"
   [genres]
   (map create-movie (select "movie"
-               (where {:id [in (movie-genres genres)]}))))
+                            (where {:id [in (movie-genres-q genres)]}))))
+
+;; all-movie-with-runtime : number -> seq(movie)
+(defn all-movie-with-runtime
+  "searches for movie with runtime"
+  [runtime]
+  (map create-movie (select "movie"
+                            (where (< :runtime runtime)))))
+
+;; all-movie-with-year : number -> seq(movie)
+(defn all-movie-with-year
+  "searcher for a movie with a year"
+  [year]
+  (map create-movie (select "movie"
+                            (where (= :year year)))))
+
+;; all-movie-with-attributes : vector, number, number -> seq(movie)
+(defn all-movie-with-attributes
+  "Searches with all attributes"
+  [genres runtime year]
+  (map create-movie (select "movie"
+                            (where (and
+                                    {:id [in (movie-genres-q genres)]}
+                                    (= :runtime runtime)
+                                    (= :year year))))))
