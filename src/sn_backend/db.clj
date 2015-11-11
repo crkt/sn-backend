@@ -103,7 +103,7 @@
 ;; all-movie-with-attributes : vector, number, number -> seq(movie)
 (defn all-movie-with-attributes
   "Searches with all attributes"
-  [genres runtime year]
+  [& {:keys [genres runtime year]}]
   (map create-movie (select "movie"
                             (where (and
                                     {:id [in (movie-genres-q genres)]}
