@@ -19,8 +19,8 @@
   (def *db* {:classname "com.mysql.jdbc.Driver"
            :subprotocol "mysql"
            :subname (str "//" db-host ":" db-port "/" db-name)
-           :user "phcr"
-           :password "awt800"}))
+           :user "sortnight"
+           :password "secret"}))
 
 (defn get-movie-genres [id]
   "get's all the genres of a movie, returns a sequence of genres"
