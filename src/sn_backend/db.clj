@@ -19,6 +19,29 @@
 
 
 
+(select "genre"
+        (where {:genre.genre [in ["crime"]]}))
+
+(defn movie-genres 
+  "Get the movies genres"
+  [id]
+  (select "genre"
+          (fields :genre)
+          (join "movie_genre" (= :movie_genre.movie_id id))
+          (where (= :genre.id :movie_genre.genre_id))))
+
+(defmacro genres [genres]
+  `(select "genre" (where {:genre.genre [in ~genres]})))
+
+(defn create-movie [row]
+  (let [genres (movie-genres (:id row))
+        m (->Movie (:id row)
+                   (:title row)
+                   (:year row)
+                   (:runtime row)
+                   genres)]
+    m))
+
 ;;
 ;;         "select * from movie where id in "
 ;;                  "(select movie_id from movie_genre where genre_id in"
