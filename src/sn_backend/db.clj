@@ -95,6 +95,11 @@
   (map create-movie (select "movie"
                             (where (= :year year)))))
 
+
+(defmacro movie-q [body]
+  `(select "movie"
+           (where (and ~body))))
+
 ;; all-movie-with-attributes : vector, number, number -> seq(movie)
 (defn all-movie-with-attributes
   "Searches with all attributes"
