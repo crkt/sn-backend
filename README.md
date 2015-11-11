@@ -20,18 +20,36 @@ You can then test to go to http://localhost:3000 and see that the server is runn
 You did it!
 
 ### Database
-#### Linux/Mac
+The mysql command line takes arguments
+```
+mysql --user=user_name --password=your_password db_name
+mysql -u root // Connects as root to mysql server
+mysql -u root -p // Connects as root with password required
+mysql -u root -p sortnight // Connects to the database as root and uses the sortnight database
+```
+
+#### Linux/Mac/Windows
 The database we use is [MariaDB](https://mariadb.org/) Install it on your system.
 
 Then proced to create the sortnight database and user.
+##### Linux/Mac
 To connect to the database (in linux/mac) do:
 ```
 mysql -u root
 ```
+##### Windows
+To connect to the mysql server database in windows with cmd do:
 
+replace \Path\To with the location to the installed mysql
+e.g Users\Bla\XAMPP\mysql\bin\mysql
+```
+C:\Path\To\mysql\bin\mysql -u root
+```
+
+##### Linux/Mac/Windows
 Once inside the database you need to create the sortnight database:
 ```
-CREATE DATABASE sortnight;
+CREATE DATABASE sortnight; 
 USE sortnight;
 ```
 
@@ -50,30 +68,6 @@ You then need to add the database tables,relations and data. This is done by doi
 SOURCE file.sql (The source for the db.sql file in the backend project, if you ran mysql -u sortnight -p inside the directory you could then just type,
 SOURCE db.sql)
 ```
-
-You can then proceed to update the db.clj file (if needed) to say:
-```
-(let [db-host "localhost"
-      db-port 3306
-      db-name "sortnight"]
-  (def *db* {:classname "com.mysql.jdbc.Driver"
-           :subprotocol "mysql"
-           :subname (str "//" db-host ":" db-port "/" db-name)
-           :user "sortnight"
-           :password "secret"}))
-```
-
-#### Windows with XAMPP
-Create a sortnight database.
-
-Create a sortnight user:
-
-Username: sortnight
-
-Password: secret
-
-Change the db.clj file to look like it does above (if needed)
-
 
 ## License
 
