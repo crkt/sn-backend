@@ -15,7 +15,6 @@
   The response is an json array of movie objects."
   [req]
   (let [body (:body req)]
-    (println "body" body)
     (response (search/search-movie body))))
 
 (defn create-user
