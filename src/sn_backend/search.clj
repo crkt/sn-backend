@@ -19,5 +19,4 @@
         runtime (:runtime body)
         year (:year body)]
     (cond
-     (and (not-nil? genres) (not-nil? runtime) (not-nil? year)) (db/all-movie-with-attributes genres runtime year)
-     (and (not-nil? genres) (not-nil? runtime) (nil? year)) (db/all-movie-with-attribute genres runtime))))
+     (and (not-nil? genres) (not-nil? runtime) (not-nil? year)) (db/movie-with-attributes :genres genres, :runtime runtime, :year year))))
