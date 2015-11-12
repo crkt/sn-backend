@@ -75,8 +75,7 @@
 ;; PASSWORD(password)
 (defn create-user-with [body]
   (insert "user"
-          (values {:email (:email body)}
-                  {:password (:password body)})))
+          (values {:email (:email body) :password (:password body)})))
 
 
 ;;*****************************************************
