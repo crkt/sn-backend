@@ -89,18 +89,39 @@
 ;; Search queries
 ;;*****************************************************
 
+(defn not-nil? 
+  [x]
+  (not (nil? x)))
 
-(defmacro movie-q
-  [& body]
-  (println body)
-  `(-> (select* "movie")
-       (where (and ~@body))
-       (as-sql)))
-
-(defn new-movie-with-attributes
-  [genres runtime year]
-  (map create-movie (select "movie"
-                            (where (and 
-                                    {:id [in (movie-genres-q genres)]}
-                                    (= :runtime runtime)
-                                    (= :year year))))))
+(defn movies-with-attributes
+  [& {:keys [genres runtime year]}]
+  (cond
+   (and (not-nil? genres) (not-nil? runtime) (not-nil? year))
+   (map create-movie (select "movie"
+                             (where (and 
+                                     {:id [in (movie-genres-q genres)]}
+                                     (= :runtime runtime)
+                                     (= :year year)))))
+   (and (not-nil? genres) (not-nil? runtime) (nil? year))
+   (map create-movie (select "movie"
+                             (where (and
+                                     {:id [in (movie-genres-q genres)]}
+                                     (= :runtime runtime)))))
+   (and (not-nil? genres) (nil? runtime) (not-nil? year))
+   (map create-movie (select "movie"
+                             (where (and
+                                     {:id [in (movie-genres-q genres)]}
+                                     (= :year year)))))
+   (and (nil? genres) (not-nil? runtime) (not-nil? year))
+   (map create-movie (select "movie"
+                             (where (and
+                                     (= :runtime runtime)
+                                     (= :year year)))))
+   (and (nil? genres) (nil? runtime) (not-nil? year))
+   (map create-movie (select "movie"
+                             (where (and
+                                     (= :year year)))))
+   (and (not-nil? genres) (nil? runtime) (nil? year))
+   (map create-movie (select "movie"
+                             (where (and
+                                     {:id [in (movie-genres-q genres)]}))))))
