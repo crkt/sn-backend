@@ -19,13 +19,19 @@
   (println "result from db" (db/search-for-genres (get-in req [:body :genres])))
   (response (db/search-for-genres (get-in req [:body :genres]))))
 
+(defn create-user
+  [req]
+  (response (db/create-user-with (:body req))))
+
 ;; handler : nil -> response
 ;; the routing of the application
-;; returns a response depending on the requested resource.
+;; r]eturns a response depending on the requested resource.
 (defroutes  handler
   (GET "/" [] (response {}))
   (PUT "/search/movie" request
        (search-for-movie request))
+  (POST "/user/register" request
+        (create-user request))
   (route/not-found "The requested resource does not exist"))
 
 
