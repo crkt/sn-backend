@@ -98,14 +98,13 @@
 
 (defmacro movie-q [body]
   `(select "movie"
-           (where (and ~body))))
+           (where (and ~@body))))
 
 ;; all-movie-with-attributes : vector, number, number -> seq(movie)
-(defn all-movie-with-attributes
+(defn movie-with-attributes
   "Searches with all attributes"
   [& {:keys [genres runtime year]}]
-  (map create-movie (select "movie"
-                            (where (and
-                                    {:id [in (movie-genres-q genres)]}
-                                    (= :runtime runtime)
-                                    (= :year year))))))
+  (map create-movie (movie-q ({:id [in (movie-genres-q genres)]}
+                              (= :runtime runtime)
+                              (= :year year))
+                             )))

@@ -14,7 +14,9 @@
   "Searches for a movie in the database with a request object.
   The response is an json array of movie objects."
   [req]
-  (response (search/search-movie (:body req))))
+  (let [body (:body req)]
+    (println "body" body)
+    (response (search/search-movie body))))
 
 ;; handler : nil -> response
 ;; the routing of the application
