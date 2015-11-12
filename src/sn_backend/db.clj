@@ -1,46 +1,67 @@
 (ns sn-backend.db
-  (:require [sn-backend.domain.movie :refer :all]
-            [clojure.string :refer :all :as string]
-            [clojure.java.jdbc :refer :all :as jdbc])
+  (:require [korma.core :refer :all :rename {update sql-update}]
+            [korma.db :refer :all])
   (:gen-class))
 
-;; Creates a global database variable.
-;; earmuffs since it's global.
-(let [db-host "localhost"
-      db-port 3306
-      db-name "sortnight"]
-  (def *db* {:classname "com.mysql.jdbc.Driver"
-           :subprotocol "mysql"
-           :subname (str "//" db-host ":" db-port "/" db-name)
-           :user "sortnight"
-           :password "secret"}))
+;;*****************************************************
+;; Movie Record
+;;*****************************************************
+(defrecord Movie [id title year runtime genres])
 
-(defn get-movie-genres 
-  "get's all the genres of a movie, returns a sequence of genres
-  [{:genre action :genre drama}]"
+;;*****************************************************
+;; Database connection config
+;;*****************************************************
+(defdb ^{:dynamic false} db (mysql {:db "sortnight"
+                       :user "sortnight"
+                       :password "secret"
+                       :host "localhost"
+                       :port "3306"
+                       :delimiters ""}))
+
+;;*****************************************************
+;; Base queries
+;;*****************************************************
+
+;; genres-q : vector -> vector
+(defn genres-q 
+  "Get all id's for genres specified. Returns a vector of the ids
+  [crime drama action adventure] -> [1 2 3 4]"
+  [genres]
+  (into [] (map (fn [x]
+                  (:id x)) (select "genre" 
+                  (fields :id)
+                  (where {:genre.genre [in genres]})))))
+
+;; movie-genres : vector -> vector
+(defn movie-genres-q
+  "Returns movie id's in a vector
+  [crime drama] -> [1 2 3] (Consists of movie_ids)
+  that have the genres specified."
+  [genres]
+  (into [] (map (fn [x]
+                  (:movie_id x)) (select "movie_genre"
+                        (fields :movie_id)
+                        (where {:movie_genre.genre_id [in (genres-q genres)]})))))
+
+;; all-movie-genres : number -> seq({:genre ""},{:genre ""})
+(defn all-movie-genres
+  "Get the movies genres"
   [id]
-  (with-db-connection [db-con *db*]
-    (jdbc/query db-con ["select genre from genre join (select genre_id from movie_genre where movie_id=?) as gm on (gm.genre_id = genre.id)" id])))
+  (into [] (map (fn [x]
+                  (:genre x)) 
+                (select "genre"
+                        (fields :genre)
+                        (join "movie_genre" (= :movie_genre.movie_id id))
+                        (where (= :genre.id :movie_genre.genre_id))))))
 
-(defn params-sql-query 
-  "Creates a sql vector that the jdbc expects, 
-  changes all symbols into strings in the parameters. e.g
-  [sql params]
-  [select * from movie where id = ? and name = ? 1 Park]" 
-  [sql params]
-  (into [] (flatten (cons sql (map str params)))))
-
-(defn add-args-to-query 
-  "Adds all the ? needed in the preparedStatement, lst is the arguments to count
-  Since prepared statements are not 'dynamic' this is required. You must know all
-  of the ? in advance."
-  [lst]
-  (clojure.string/join ", " (take (count lst) (repeat "?"))))
-
+;;*****************************************************
+;; Movie Record creation
+;;*****************************************************
+;; create-movie : {:key val...} -> Movie Record
 (defn create-movie 
-  "creates a movie record with a movie row from the database"
+  "Creates a movie record from a hash of movie values"
   [row]
-  (let [genres (get-movie-genres (:id row))
+  (let [genres (all-movie-genres (:id row))
         m (->Movie (:id row)
                    (:title row)
                    (:year row)
@@ -48,41 +69,42 @@
                    genres)]
     m))
 
-(defn search-for-genres 
-  "Searches for movies with the genres given.
-   Expects a vector of genres, [action drama]"
+;;*****************************************************
+;; Search queries
+;;*****************************************************
+
+;; all-movies-with-genres : vector -> seq(movie)
+(defn all-movie-with-genres 
+  "Returns movie objects with the genres specified.
+  [crime drama] -> (#movieObj #movieObj)"
   [genres]
-  (with-db-connection [db-con *db*]
-    ;; the query is a sql vector query [sql-query & params]
-    (let [query (params-sql-query
-                 (str
-                  "select * from movie where id in "
-                  "(select movie_id from movie_genre where genre_id in "
-                  "(select id from genre where genre in (" 
-                  (add-args-to-query genres) ")))")
-                 genres)
-          ;; store the result in the rs
-          rs (jdbc/query db-con query)]
-      ;; create movies of all the rows retrieved from the database
-      ;; remove println later on, currently only for debugging.
-      (println query)
-      (map create-movie rs))))
+  (map create-movie (select "movie"
+                            (where {:id [in (movie-genres-q genres)]}))))
+
+;; all-movie-with-runtime : number -> seq(movie)
+(defn all-movie-with-runtime
+  "searches for movie with runtime"
+  [runtime]
+  (map create-movie (select "movie"
+                            (where (< :runtime runtime)))))
+
+;; all-movie-with-year : number -> seq(movie)
+(defn all-movie-with-year
+  "searcher for a movie with a year"
+  [year]
+  (map create-movie (select "movie"
+                            (where (= :year year)))))
 
 
-(defn search-movie 
-  ": genre the genres to search for
-   : runtime the runtime the movie must have
-   : year the year the movie must have"
-  [genres runtime]
-  (with-db-connection [db-con *db*]
-    (let [query (params-sql-query
-                 (str
-                  "select * from movie where id in "
-                  "(select movie_id from movie_genre where genre_id in"
-                  "(select id from genre where genre in ("
-                  (add-args-to-query genres) ")))"
-                  "and runtime < ? ")
-                 (conj genres runtime))
-          rs (jdbc/query db-con query)]
-      (println query)
-      (map create-movie rs))))
+(defmacro movie-q [body]
+  `(select "movie"
+           (where (and ~@body))))
+
+;; all-movie-with-attributes : vector, number, number -> seq(movie)
+(defn movie-with-attributes
+  "Searches with all attributes"
+  [& {:keys [genres runtime year]}]
+  (map create-movie (movie-q ({:id [in (movie-genres-q genres)]}
+                              (= :runtime runtime)
+                              (= :year year))
+                             )))
