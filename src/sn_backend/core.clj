@@ -6,8 +6,7 @@
             [ring.middleware.reload :refer :all]
             [ring.middleware.stacktrace :refer :all]
             [ring.adapter.jetty :refer :all]
-            [sn-backend.db :as db]
-            [sn-backend.domain.movie :refer :all])
+            [sn-backend.search :as search])
   (:gen-class))
 
 ;; search-for-movie : request map (json) -> response (json)
@@ -15,9 +14,9 @@
   "Searches for a movie in the database with a request object.
   The response is an json array of movie objects."
   [req]
-  (println (get-in req [:body :genres]))
-  (println "result from db" (db/search-for-genres (get-in req [:body :genres])))
-  (response (db/search-for-genres (get-in req [:body :genres]))))
+  (let [body (:body req)]
+    (println "body" body)
+    (response (search/search-movie body))))
 
 (defn create-user
   [req]
