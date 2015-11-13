@@ -14,4 +14,5 @@
 (defn login-user
   [body]
   (let [email (:email body)
-        password (:password body)]))
+        password (:password body)]
+    (db/select-user-email email password)))

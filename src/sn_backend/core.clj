@@ -14,6 +14,10 @@
   [req]
   (response (user/register-user (:body req))))
 
+(defn login-user
+  [req]
+  (response (user/login-user (:body req))))
+
 ;; handler : nil -> response
 ;; the routing of the application
 ;; r]eturns a response depending on the requested resource.
@@ -21,6 +25,8 @@
   (GET "/" [] (response {}))
   (POST "/user/register" request
         (create-user request))
+  (PUT "/user/login" request
+       (login-user request))
   (route/not-found "The requested resource does not exist"))
 
 

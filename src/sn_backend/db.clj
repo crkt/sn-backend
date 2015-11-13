@@ -101,10 +101,11 @@
           (where (= :id id))))
 
 (defn select-user-email
-  [email]
+  [email password]
   (select "user"
           (fields :email :id)
-          (where (= :email email))))
+          (where (and (= :email email)
+                      (= :password password)))))
 
 ;;*****************************************************
 ;; Search queries
