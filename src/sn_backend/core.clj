@@ -14,8 +14,10 @@
   "Searches for a movie in the database with a request object.
   The response is an json array of movie objects."
   [req]
+  (println "request body" (:body req))
+  (println "request title" (nil? (:title (:body req))))
   (let [body (:body req)]
-    (response (search/search-movie body))))
+    (search/search-movie body)))
 
 ;; handler : nil -> response
 ;; the routing of the application
@@ -23,7 +25,7 @@
 (defroutes  handler
   (GET "/" [] (response {}))
   (PUT "/search/movie" request
-       (search-for-movie request))
+       (response (search-for-movie request)))
   (route/not-found "The requested resource does not exist"))
 
 
