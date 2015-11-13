@@ -89,9 +89,16 @@
 ;; User queries
 ;;*****************************************************
 ;; PASSWORD(password)
-(defn create-user-with [body]
+(defn insert-user 
+  [email password]
   (insert "user"
-          (values {:email (:email body) :password (:password body)})))
+          (values {:email email :password password})))
+
+(defn select-user 
+  [id]
+  (select "user"
+          (fields :email :id)
+          (where (= :id id))))
 
 
 ;;*****************************************************

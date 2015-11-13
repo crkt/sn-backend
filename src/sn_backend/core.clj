@@ -6,28 +6,19 @@
             [ring.middleware.reload :refer :all]
             [ring.middleware.stacktrace :refer :all]
             [ring.adapter.jetty :refer :all]
-            [sn-backend.search :as search])
+            [sn-backend.search :as search]
+            [sn-backend.user :as user])
   (:gen-class))
-
-;; search-for-movie : request map (json) -> response (json)
-(defn search-for-movie 
-  "Searches for a movie in the database with a request object.
-  The response is an json array of movie objects."
-  [req]
-  (let [body (:body req)]
-    (response (search/search-movie body))))
 
 (defn create-user
   [req]
-  (response (db/create-user-with (:body req))))
+  (response (user/register-user (:body req))))
 
 ;; handler : nil -> response
 ;; the routing of the application
 ;; r]eturns a response depending on the requested resource.
 (defroutes  handler
   (GET "/" [] (response {}))
-  (PUT "/search/movie" request
-       (search-for-movie request))
   (POST "/user/register" request
         (create-user request))
   (route/not-found "The requested resource does not exist"))
