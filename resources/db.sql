@@ -21,8 +21,8 @@ create table movie_genre (movie_id integer,
                          FOREIGN KEY (genre_id) REFERENCES genre(id));
 
 create table user (id integer AUTO_INCREMENT PRIMARY KEY,
-                  email text,
-                  password text);
+                  email text UNIQUE NOT NULL,
+                  password text NOT NULL);
 
 
 insert into genre (genre) values ('action');

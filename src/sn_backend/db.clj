@@ -94,12 +94,17 @@
   (insert "user"
           (values {:email email :password password})))
 
-(defn select-user 
+(defn select-user-id
   [id]
   (select "user"
           (fields :email :id)
           (where (= :id id))))
 
+(defn select-user-email
+  [email]
+  (select "user"
+          (fields :email :id)
+          (where (= :email email))))
 
 ;;*****************************************************
 ;; Search queries
