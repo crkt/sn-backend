@@ -15,9 +15,7 @@
   "Searches for a movie in the database with a request object.
   The response is an json array of movie objects."
   [req]
-  (println "request body" (:body req))
   (let [body (:body req)]
-    (println "search found: " (search/search-movie body))
     (search/search-movie body)))
 
 ;; handler : nil -> response

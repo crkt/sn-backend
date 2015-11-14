@@ -93,6 +93,8 @@
   [x]
   (not (nil? x)))
 
+
+;; filter nil values in the future...?
 (defn create-constraints [& {:keys [genres runtime year title] :as args}]
   (into {} (map (fn [x]
                   (cond
