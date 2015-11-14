@@ -93,35 +93,17 @@
   [x]
   (not (nil? x)))
 
-(defn movies-with-attributes
-  [& {:keys [genres runtime year]}]
-  (cond
-   (and (not-nil? genres) (not-nil? runtime) (not-nil? year))
-   (map create-movie (select "movie"
-                             (where (and 
-                                     {:id [in (movie-genres-q genres)]}
-                                     (= :runtime runtime)
-                                     (= :year year)))))
-   (and (not-nil? genres) (not-nil? runtime) (nil? year))
-   (map create-movie (select "movie"
-                             (where (and
-                                     {:id [in (movie-genres-q genres)]}
-                                     (= :runtime runtime)))))
-   (and (not-nil? genres) (nil? runtime) (not-nil? year))
-   (map create-movie (select "movie"
-                             (where (and
-                                     {:id [in (movie-genres-q genres)]}
-                                     (= :year year)))))
-   (and (nil? genres) (not-nil? runtime) (not-nil? year))
-   (map create-movie (select "movie"
-                             (where (and
-                                     (= :runtime runtime)
-                                     (= :year year)))))
-   (and (nil? genres) (nil? runtime) (not-nil? year))
-   (map create-movie (select "movie"
-                             (where (and
-                                     (= :year year)))))
-   (and (not-nil? genres) (nil? runtime) (nil? year))
-   (map create-movie (select "movie"
-                             (where (and
-                                     {:id [in (movie-genres-q genres)]}))))))
+(defn create-constraints [& {:keys [genres runtime year title] :as args}]
+  (into {} (map (fn [x]
+                  (cond
+                   (and (= (key x) :genres) (not-nil? (val x))) {:id ['in (movie-genres-q (val x))]}
+                   (and (= (key x) :runtime) (not-nil? (val x))) {:runtime ['= (val x)]}
+                   (and (= (key x) :year) (not-nil? (val x))) {:year ['= (val x)]}
+                   (and (= (key x) :title) (not-nil? (val x))) {:title ['like (val x)]})) 
+                args)))
+
+(defn search-movie [& {:keys [genres runtime year title]}]
+  (map create-movie (select "movie"
+                            (where (create-constraints :genres genres :runtime runtime :year year :title title)))))
+
+

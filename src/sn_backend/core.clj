@@ -9,14 +9,15 @@
             [sn-backend.search :as search])
   (:gen-class))
 
+
 ;; search-for-movie : request map (json) -> response (json)
 (defn search-for-movie 
   "Searches for a movie in the database with a request object.
   The response is an json array of movie objects."
   [req]
   (println "request body" (:body req))
-  (println "request title" (nil? (:title (:body req))))
   (let [body (:body req)]
+    (println "search found: " (search/search-movie body))
     (search/search-movie body)))
 
 ;; handler : nil -> response
