@@ -2,6 +2,7 @@ drop table if exists movie_genre;
 
 drop table if exists genre;
 drop table if exists movie;
+drop table if exists user;
 
 
 
@@ -18,6 +19,10 @@ create table movie_genre (movie_id integer,
                          genre_id integer,
                          FOREIGN KEY (movie_id) REFERENCES movie(id),
                          FOREIGN KEY (genre_id) REFERENCES genre(id));
+
+create table user (id integer AUTO_INCREMENT PRIMARY KEY,
+                  email text UNIQUE NOT NULL,
+                  password text NOT NULL);
 
 
 insert into genre (genre) values ('action');

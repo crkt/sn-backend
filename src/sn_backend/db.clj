@@ -9,6 +9,11 @@
 (defrecord Movie [id title year runtime genres])
 
 ;;*****************************************************
+;; User Record
+;;*****************************************************
+(defrecord User [id email password])
+
+;;*****************************************************
 ;; Database connection config
 ;;*****************************************************
 (defdb ^{:dynamic false} db (mysql {:db "sortnight"
@@ -55,7 +60,7 @@
                         (where (= :genre.id :movie_genre.genre_id))))))
 
 ;;*****************************************************
-;; Movie Record creation
+;; Record creation
 ;;*****************************************************
 ;; create-movie : {:key val...} -> Movie Record
 (defn create-movie 
@@ -69,32 +74,42 @@
                    genres)]
     m))
 
+;; create-user : {:key val...} -> User Record
+(defn create-user
+  "Creates a user record from a hash of user values"
+  [row]
+  (let [id (:id row)
+        email (:email row)
+        password (:password row)
+        u (->User id email password)]
+    u))
+
+
+;;*****************************************************
+;; User queries
+;;*****************************************************
+;; PASSWORD(password)
+(defn insert-user 
+  [email password]
+  (insert "user"
+          (values {:email email :password password})))
+
+(defn select-user-id
+  [id]
+  (select "user"
+          (fields :email :id)
+          (where (= :id id))))
+
+(defn select-user-email
+  [email password]
+  (select "user"
+          (fields :email :id)
+          (where (and (= :email email)
+                      (= :password password)))))
+
 ;;*****************************************************
 ;; Search queries
 ;;*****************************************************
-
-;; all-movies-with-genres : vector -> seq(movie)
-(defn all-movie-with-genres 
-  "Returns movie objects with the genres specified.
-  [crime drama] -> (#movieObj #movieObj)"
-  [genres]
-  (map create-movie (select "movie"
-                            (where {:id [in (movie-genres-q genres)]}))))
-
-;; all-movie-with-runtime : number -> seq(movie)
-(defn all-movie-with-runtime
-  "searches for movie with runtime"
-  [runtime]
-  (map create-movie (select "movie"
-                            (where (< :runtime runtime)))))
-
-;; all-movie-with-year : number -> seq(movie)
-(defn all-movie-with-year
-  "searcher for a movie with a year"
-  [year]
-  (map create-movie (select "movie"
-                            (where (= :year year)))))
-
 
 (defmacro movie-q [body]
   `(select "movie"
