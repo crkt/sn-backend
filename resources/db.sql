@@ -1,5 +1,7 @@
 drop table if exists movie_genre;
+drop table if exists rating;
 
+drop table if exists user;
 drop table if exists genre;
 drop table if exists movie;
 
@@ -13,6 +15,17 @@ create table movie (id integer AUTO_INCREMENT PRIMARY KEY,
                    year integer, 
                    description text,
                    runtime integer);
+create table user
+	(name varchar (25),
+	mail varchar (50) PRIMARY KEY,
+	password varchar (25));
+
+create table rating 
+	(user_mail varchar (50),
+	movie_title varchar (50),
+	rating integer,
+	FOREIGN KEY (user_mail) REFERENCES user(mail),
+	FOREIGN KEY (movie_title) REFERENCES movie movie(title));
 
 create table movie_genre (movie_id integer, 
                          genre_id integer,

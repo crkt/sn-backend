@@ -9,14 +9,14 @@
             [sn-backend.search :as search])
   (:gen-class))
 
+
 ;; search-for-movie : request map (json) -> response (json)
 (defn search-for-movie 
   "Searches for a movie in the database with a request object.
   The response is an json array of movie objects."
   [req]
   (let [body (:body req)]
-    (println "body" body)
-    (response (search/search-movie body))))
+    (search/search-movie body)))
 
 ;; handler : nil -> response
 ;; the routing of the application
@@ -24,7 +24,7 @@
 (defroutes  handler
   (GET "/" [] (response {}))
   (PUT "/search/movie" request
-       (search-for-movie request))
+       (response (search-for-movie request)))
   (route/not-found "The requested resource does not exist"))
 
 
