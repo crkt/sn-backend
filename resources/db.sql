@@ -21,7 +21,7 @@ create table movie_genre (movie_id integer,
                          FOREIGN KEY (genre_id) REFERENCES genre(id));
 
 create table user (id integer AUTO_INCREMENT PRIMARY KEY,
-                  email text UNIQUE NOT NULL,
+                  email varchar(255) UNIQUE NOT NULL,
                   password text NOT NULL);
 
 
@@ -57,10 +57,4 @@ insert into movie_genre (movie_id, genre_id) values (4,1);
 insert into movie_genre (movie_id, genre_id) values (4,2);
 insert into movie_genre (movie_id, genre_id) values (4,8);
 
-
-
-
-select * from movie where id in 
-                 (select movie_id from movie_genre where genre_id in
-                 (select id from genre where genre in ('crime','drama')))
-                 and runtime < 127;
+insert into user (email, password) values ("phil@mail.com", "secret");
