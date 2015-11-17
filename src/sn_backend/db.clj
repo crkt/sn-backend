@@ -86,6 +86,28 @@
 
 
 ;;*****************************************************
+;; User queries
+;;*****************************************************
+;; PASSWORD(password)
+(defn insert-user 
+  [email password]
+  (insert "user"
+          (values {:email email :password password})))
+
+(defn select-user-id
+  [id]
+  (select "user"
+          (fields :email :id)
+          (where (= :id id))))
+
+(defn select-user-email
+  [email password]
+  (select "user"
+          (fields :email :id)
+          (where (and (= :email email)
+                      (= :password password)))))
+
+;;*****************************************************
 ;; Search queries
 ;;*****************************************************
 

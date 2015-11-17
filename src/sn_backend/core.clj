@@ -6,9 +6,9 @@
             [ring.middleware.reload :refer :all]
             [ring.middleware.stacktrace :refer :all]
             [ring.adapter.jetty :refer :all]
-            [sn-backend.search :as search])
+            [sn-backend.search :as search]
+            [sn-backend.user :as user])
   (:gen-class))
-
 
 ;; search-for-movie : request map (json) -> response (json)
 (defn search-for-movie 
@@ -18,13 +18,25 @@
   (let [body (:body req)]
     (search/search-movie body)))
 
+(defn create-user
+  [req]
+  (response (user/register-user (:body req))))
+
+(defn login-user
+  [req]
+  (response (user/login-user (:body req))))
+
 ;; handler : nil -> response
 ;; the routing of the application
-;; returns a response depending on the requested resource.
+;; r]eturns a response depending on the requested resource.
 (defroutes  handler
   (GET "/" [] (response {}))
   (PUT "/search/movie" request
        (response (search-for-movie request)))
+  (POST "/user/register" request
+        (create-user request))
+  (PUT "/user/login" request
+       (login-user request))
   (route/not-found "The requested resource does not exist"))
 
 
