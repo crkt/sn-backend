@@ -107,6 +107,11 @@
           (where (and (= :email email)
                       (= :password password)))))
 
+(defn does-user-exist?
+  [email]
+  (not (nil? (first (select "user"
+                            (where (= :email email)))))))
+
 ;;*****************************************************
 ;; Search queries
 ;;*****************************************************
