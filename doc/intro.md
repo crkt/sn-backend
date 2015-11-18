@@ -41,7 +41,7 @@ A function in clojure will look like this:
 (defn function-name
       "" - comment about the function
       [] - args
-      () - the code to run ) - end of function definition
+      () - the code to run)
 ```
 ### Where do I write the code?
 #### Request code
