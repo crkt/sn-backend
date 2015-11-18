@@ -14,7 +14,7 @@ Follow that and I suggest you use Emacs, he covers a guide for how the get a goo
 
 Emacs is availabe for windows as well.
 ### Third party tools
-All of the "imports" can be found in the project.clj file under dependencies. Leiningen will then install all of the dependencies for you. Pretty neat.
+All of the "imports" can be found in the [project.clj](https://github.com/Fruitschinpo/sn-backend/blob/master/project.clj) file under dependencies. Leiningen will then install all of the dependencies for you. Pretty neat.
 
 It will look like this
 ```
@@ -29,7 +29,7 @@ For running the server on a port it uses [clojure/ring](https://github.com/ring-
 
 Creating json responses, we use [json-ring](https://github.com/ring-clojure/ring-json) This is setup in our handler, located in core.clj.
 
-The database uses [SQLKorma](http://sqlkorma.com/docs) for creating queries to our database. The database is a MySQL using [MariaDB](https://mariadb.org/). We run it on port 3306. To change the database config edit it in the db.clj file.
+The database uses [SQLKorma](http://sqlkorma.com/docs) for creating queries to our database. The database is a MySQL using [MariaDB](https://mariadb.org/). We run it on port 3306. To change the database config edit it in the [db.clj](https://github.com/Fruitschinpo/sn-backend/blob/master/src/sn_backend/db.clj) file.
 
 ## Writing Code
 ### Coding standard
