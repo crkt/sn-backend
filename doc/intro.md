@@ -11,9 +11,13 @@ Some good resources to read and follow to get feel for it are:
 * [BraveClojure](http://www.braveclojure.com/introduction/)
 
 Follow that and I suggest you use Emacs, he covers a guide for how the get a good emacs enviroment setup. Just follow the steps.
+There are other options, check the clojure tools section here: [Clojure Tools](http://clojure.org/getting_started)
 
 Emacs is availabe for windows as well.
 ### Third party tools
+Here you can find information on what third party tools we use.
+
+#### Add a tool to the project
 All of the "imports" can be found in the [project.clj](https://github.com/Fruitschinpo/sn-backend/blob/master/project.clj) file under dependencies. Leiningen will then install all of the dependencies for you. Pretty neat.
 
 It will look like this
@@ -22,6 +26,12 @@ It will look like this
                [add tool here]
                [korma "0.4.2"]]
 ```
+
+#### Our Tools
+* [compojure](https://github.com/weavejester/compojure)
+* [clojure/ring](https://github.com/ring-clojure/ring)
+* [json-ring](https://github.com/ring-clojure/ring-json)
+* [SQLKorma](http://sqlkorma.com/docs)
 
 The server uses [compojure](https://github.com/weavejester/compojure) for routing requests to the server. Additional information and usage can be found in the link. The routing is done in core.clj
 
