@@ -15,4 +15,4 @@
   [body]
   (let [email (:email body)
         password (:password body)]
-    (into) {} (db/select-user-email email password)))
+    (into {} (db/select-user-email email password))))
