@@ -27,6 +27,8 @@ The server uses [compojure](https://github.com/weavejester/compojure) for routin
 
 For running the server on a port it uses [clojure/ring](https://github.com/ring-clojure/ring) We use the Jetty adapter and run it on port 3000. See the main function in core.clj
 
+Creating json responses, we use [json-ring](https://github.com/ring-clojure/ring-json) This is setup in our handler, located in core.clj.
+
 The database uses [SQLKorma](http://sqlkorma.com/docs) for creating queries to our database. The database is a MySQL using [MariaDB](https://mariadb.org/). We run it on port 3306. To change the database config edit it in the db.clj file.
 
 ## Writing Code
