@@ -20,23 +20,23 @@
 
 (defn create-user
   [req]
-  (response (user/register-user (:body req))))
+  (user/register-user (:body req)))
 
 (defn login-user
   [req]
-  (response (user/login-user (:body req))))
+  (user/login-user (:body req)))
 
 ;; handler : nil -> response
 ;; the routing of the application
-;; r]eturns a response depending on the requested resource.
+;; returns a response depending on the requested resource.
 (defroutes  handler
   (GET "/" [] (response {}))
   (PUT "/search/movie" request
-       (response (search-for-movie request)))
+       (status (response (search-for-movie request)) 200))
   (POST "/user/register" request
-        (create-user request))
+        (status (response (create-user request)) 201))
   (PUT "/user/login" request
-       (login-user request))
+       (status (response (login-user request)) 202))
   (route/not-found "The requested resource does not exist"))
 
 
