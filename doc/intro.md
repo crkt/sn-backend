@@ -1,5 +1,21 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Introduction to sn-backend](#)
+	- [General information](#)
+		- [Clojure](#)
+		- [Third party tools](#)
+			- [Add a tool to the project](#)
+			- [Our Tools](#)
+	- [Writing Code](#)
+		- [Coding standard](#)
+		- [Where do I write the code?](#)
+			- [Request code](#)
+			- [Specific code](#)
+			- [Database queries](#)
+			- [All together](#)
+
 # Introduction to sn-backend
-TODO: write [great documentation](http://jacobian.org/writing/what-to-write/)
+TODO: write [great documentation](http://jacobian.org/writing/what-to-write/) 
 
 The link between the database and client.
 
@@ -68,6 +84,8 @@ e.g Create a route in core.clj let's say
      (response (search-for-movie request)))
 ```
 The response function returns a json response of the data given to it. In this case it will be a list of movies which will become [Obj,Obj,Obj] in JSON.
+
+Don't forget, that every route you add, you need to create the ProxyPass in the apache config for it.
 
 The search-movie is in the core.clj and looks like this:
 ```
