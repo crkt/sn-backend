@@ -6,9 +6,12 @@ The link between the database and client.
 ## General information
 ### Clojure
 Learning clojure is not as hard as learning java. NOTHING IS IMPOSSIBLE.
+
 Some good resources to read and follow to get feel for it are:
-[BraveClojure](http://www.braveclojure.com/introduction/)
+* [BraveClojure](http://www.braveclojure.com/introduction/)
+
 Follow that and I suggest you use Emacs, he covers a guide for how the get a good emacs enviroment setup. Just follow the steps.
+
 Emacs is availabe for windows as well.
 ### Third party tools
 All of the "imports" can be found in the project.clj file under dependencies. Leiningen will then install all of the dependencies for you. Pretty neat.
@@ -84,6 +87,9 @@ This function uses the database query for searching for a movie, it looks like t
 ```
 This query uses SQLKorma and some custom functions to create where params to select the movies with the attributes. It will return a list of movie objects, e.g (Movie1, Movie2)
 
-There is no "return" syntax in clojure. What is evaluated last get's returned. So you never write return x
+There is no "return" syntax in clojure. What is evaluated last get's returned. So you never write 
+```
+return x.
+```
 
 Good, you should now be prepared to break something in the project. Go ahead and do it. But beware, you might learn something from it!
