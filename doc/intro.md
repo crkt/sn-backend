@@ -16,6 +16,13 @@ Emacs is availabe for windows as well.
 ### Third party tools
 All of the "imports" can be found in the project.clj file under dependencies. Leiningen will then install all of the dependencies for you. Pretty neat.
 
+It will look like this
+```
+:dependencies [[org.clojure/clojure "1.7.0"]
+               [add tool here]
+               [korma "0.4.2"]]
+```
+
 The server uses [compojure](https://github.com/weavejester/compojure) for routing requests to the server. Additional information and usage can be found in the link. The routing is done in core.clj
 
 For running the server on a port it uses [clojure/ring](https://github.com/ring-clojure/ring) We use the Jetty adapter and run it on port 3000. See the main function in core.clj
