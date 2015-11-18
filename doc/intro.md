@@ -72,6 +72,17 @@ A function in clojure will look like this:
 ### Where do I write the code?
 #### Request code
 For now we write all the routing code in core.clj. We write the handlers for a request on a specific url and a method there. e.g /search/movie has a handler in core.clj 
+
+Be sure to return an appropriate status code in your HTTP response. You can find the standard for them here [W3](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)
+
+To add a status to your response, just add:
+```
+(status (response data) code)
+e.g
+(status (response (get-all-movies)) 200)
+or
+(status (response (login-user user)) 202)
+```
 #### Specific code
 This means for example the user specific code is in user.clj and the search specific code is in search.clj
 #### Database queries
