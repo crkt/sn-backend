@@ -58,6 +58,7 @@ Creating json responses, we use [json-ring](https://github.com/ring-clojure/ring
 
 The database uses [SQLKorma](http://sqlkorma.com/docs) for creating queries to our database. The database is a MySQL using [MariaDB](https://mariadb.org/). We run it on port 3306. To change the database config edit it in the [db.clj](https://github.com/Fruitschinpo/sn-backend/blob/master/src/sn_backend/db.clj) file.
 
+The [Dire](https://github.com/MichaelDrogalis/dire) library is for writing our error handling code. Simply put.
 ## Writing Code
 ### Coding standard
 A function in clojure will look like this:
@@ -97,8 +98,8 @@ The Handle-request function call is actually a macro, that looks like this:
 ```
 The first argument is the http request map, the f is a function. As you can see I'm giving it a function as an argument. Since all of our functions for getting something from the database are quite simillar we can do an abstraction like this. So the search/search-movie is the search-movie function in the search.clj file. Which is pretty fucking awesome.
 
-The error arg is a HTTP Error Code. [W3](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)
-The ok arg is a HTTP OK Code. [W3](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)
+The error arg is a HTTP [Error Code](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)
+The ok arg is a HTTP [OK Code](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)
 
 
 #### Specific code
