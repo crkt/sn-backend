@@ -180,7 +180,7 @@ The search-for-movie returns a http response with a status code.
 
 IMPORTANT!!! 
 
-Don't forget, that every route you add, you need to create the ProxyPass in the apache config for it.
+**Don't forget, that every route you add, you need to create the ProxyPass in the apache config for it.**
 
 The search-movie is a function in core.clj and looks like this:
 ```
