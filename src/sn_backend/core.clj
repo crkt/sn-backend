@@ -10,21 +10,32 @@
             [sn-backend.user :as user])
   (:gen-class))
 
-;; search-for-movie : request map (json) -> response (json)
+
+;; handle-request : map{} function number number -> http response
+(defmacro handle-request 
+  "This macro is for returning a response to a client. Expects a request map, a function to handle the request map and an http error code if the request fails and an http ok code if the request is good."
+  [req f error ok]
+  `(let [res# (~f (:body ~req))]
+     (if  (contains? res# :error)
+       (status (response res#) ~error)
+       (status (response res#) ~ok))))
+
+
 (defn search-for-movie 
   "Searches for a movie in the database with a request object.
   The response is an json array of movie objects."
   [req]
-  (let [body (:body req)]
-    (search/search-movie body)))
+  (handle-request req search/search-movie 400 200))
 
 (defn create-user
+  "Creates a user in the database, if the email is taken returns an error object. Refer to the user file to see what it contains."
   [req]
-  (user/register-user (:body req)))
+  (handle-request req user/register-user 400 201))
 
 (defn login-user
+  "Logins a user, returns error if the user doesn't exist"
   [req]
-  (user/login-user (:body req)))
+  (handle-request req user/login-user 400 202))
 
 ;; handler : nil -> response
 ;; the routing of the application
@@ -32,11 +43,11 @@
 (defroutes  handler
   (GET "/" [] (response {}))
   (PUT "/search/movie" request
-       (status (response (search-for-movie request)) 200))
+       (search-for-movie request))
   (POST "/user/register" request
-        (status (response (create-user request)) 201))
+        (create-user request))
   (PUT "/user/login" request
-       (status (response (login-user request)) 202))
+       (login-user request))
   (route/not-found "The requested resource does not exist"))
 
 
