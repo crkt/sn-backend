@@ -16,9 +16,12 @@
   "This macro is for returning a response to a client. Expects a request map, a function to handle the request map and an http error code if the request fails and an http ok code if the request is good."
   [req f error ok]
   `(let [res# (~f (:body ~req))]
-     (if  (contains? res# :error)
-       (status (response res#) ~error)
-       (status (response res#) ~ok))))
+     (if (map? res#)
+       (if (contains? res# :error)
+         (status (response res#) ~error)
+         (status (response res#) ~ok))
+       res#)))
+
 
 
 (defn search-for-movie 
