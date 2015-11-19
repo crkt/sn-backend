@@ -92,8 +92,10 @@ The Handle-request function call is actually a macro, that looks like this:
   "This macro is for returning a response to a client. Expects a request map, a function to handle the request map and an http error code if the request fails and an http ok code if the request is good."
   [req f error ok]
   `(let [res# (~f (:body ~req))]
-     (if  (contains? res# :error)
-       (status (response res#) ~error)
+     (if (map? res#)
+       (if (contains? res# :error)
+         (status (response res#) ~error)
+         (status (response res#) ~ok))
        (status (response res#) ~ok))))
 ```
 The first argument is the http request map, the f is a function. As you can see I'm giving it a function as an argument. Since all of our functions for getting something from the database are quite simillar we can do an abstraction like this. So the search/search-movie is the search-movie function in the search.clj file. Which is pretty fucking awesome.

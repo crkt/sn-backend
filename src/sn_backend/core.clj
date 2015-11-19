@@ -20,7 +20,7 @@
        (if (contains? res# :error)
          (status (response res#) ~error)
          (status (response res#) ~ok))
-       res#)))
+       (status (response res#) ~ok))))
 
 
 
