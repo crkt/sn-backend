@@ -67,7 +67,8 @@
 
 
 (defn -main 
-  "Main method for the server, runs a jetty server on port 3000 with our app handler"  []
+  "Main method for the server, runs a jetty server on port 3000 with our app handler"  
+  []
   (run-jetty #'app {:port 3000}))
 
 
