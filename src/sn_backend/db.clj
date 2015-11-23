@@ -91,25 +91,25 @@
 ;; PASSWORD(password)
 (defn insert-user 
   [email password]
-  (insert "user"
+  (insert "users"
           (values {:email email :password password})))
 
 (defn select-user-id
   [id]
-  (select "user"
+  (select "users"
           (fields :email :id)
           (where (= :id id))))
 
 (defn select-user-email
   [email password]
-  (select "user"
+  (select "users"
           (fields :email :id)
           (where (and (= :email email)
                       (= :password password)))))
 
 (defn does-user-exist?
   [email]
-  (not (nil? (first (select "user"
+  (not (nil? (first (select "users"
                             (where (= :email email)))))))
 
 ;;*****************************************************

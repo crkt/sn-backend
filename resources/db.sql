@@ -16,10 +16,10 @@ create table movie (id integer AUTO_INCREMENT PRIMARY KEY,
                    year integer, 
                    description text,
                    runtime integer);
-create table user
-	(name varchar (25),
-	mail varchar (50) PRIMARY KEY,
-	password varchar (25));
+
+create table users (id integer AUTO_INCREMENT PRIMARY KEY,
+                   email varchar(255) UNIQUE NOT NULL,
+                    password text NOT NULL);
 
 create table rating 
 	(user_mail varchar (50),
@@ -32,11 +32,6 @@ create table movie_genre (movie_id integer,
                          genre_id integer,
                          FOREIGN KEY (movie_id) REFERENCES movie(id),
                          FOREIGN KEY (genre_id) REFERENCES genre(id));
-
-create table user (id integer AUTO_INCREMENT PRIMARY KEY,
-                  email varchar(255) UNIQUE NOT NULL,
-                  password text NOT NULL);
-
 
 insert into genre (genre) values ('action');
 insert into genre (genre) values ('drama');
