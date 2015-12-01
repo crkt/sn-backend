@@ -1,10 +1,13 @@
 drop table if exists movie_genre;
+drop table if exists avg_rating;
 drop table if exists rating;
+drop table if exists count_rating;
 
-drop table if exists user;
+drop table if exists users;
 drop table if exists genre;
 drop table if exists movie;
-drop table if exists user;
+
+
 
 
 
@@ -19,19 +22,42 @@ create table movie (id integer AUTO_INCREMENT PRIMARY KEY,
 
 create table users (id integer AUTO_INCREMENT PRIMARY KEY,
                    email varchar(255) UNIQUE NOT NULL,
-                    password text NOT NULL);
+                   password text NOT NULL);
 
-create table rating 
-	(user_mail varchar (50),
-	movie_title varchar (50),
-	rating integer,
-	FOREIGN KEY (user_mail) REFERENCES user(mail),
-	FOREIGN KEY (movie_title) REFERENCES movie movie(title));
+create table rating (user_id integer,
+                    movie_id integer,
+                    rating integer,
+                    PRIMARY KEY (user_id, movie_id),
+                    FOREIGN KEY (user_id) REFERENCES users(id),
+                    FOREIGN KEY (movie_id) REFERENCES movie(id));
+
+create table avg_rating (movie_id integer,
+                        rating float,
+                        nr_votes integer,
+                        FOREIGN KEY (movie_id) REFERENCES movie(id));
+
+create table count_rating (movie_id integer,
+                          votes integer,
+                          FOREIGN KEY (movie_id) REFERENCES movie(id));
+
+
+CREATE TRIGGER count AFTER INSERT ON rating
+                     FOR EACH ROW
+                     BEGIN
+                     UPDATE count_rating SET count_rating.movie_id = NEW.movie_id,
+                                             count_rating.votes = (select count(user_id) from rating where rating.movie_id = NEW.movie_id) where movie_id = NEW.movie_id;
+
+/*CREATE TRIGGER inc_count AFTER UPDATE ON rating
+                         FOR EACH ROW
+                         UPDATE count_rating SET count_rating.votes = (select count(user_id) from rating where rating.movie_id = NEW.movie_id) where movie_id = NEW.movie_id;
+*/
 
 create table movie_genre (movie_id integer, 
                          genre_id integer,
                          FOREIGN KEY (movie_id) REFERENCES movie(id),
                          FOREIGN KEY (genre_id) REFERENCES genre(id));
+
+
 
 insert into genre (genre) values ('action');
 insert into genre (genre) values ('drama');
@@ -65,4 +91,8 @@ insert into movie_genre (movie_id, genre_id) values (4,1);
 insert into movie_genre (movie_id, genre_id) values (4,2);
 insert into movie_genre (movie_id, genre_id) values (4,8);
 
-insert into user (email, password) values ("phil@mail.com", "secret");
+insert into users (email, password) values ("phil@mail.com", "secret");
+insert into users (email, password) values ("phila@mail.com", "secret");
+insert into users (email, password) values ("philb@mail.com", "secret");
+insert into users (email, password) values ("philc@mail.com", "secret");
+insert into users (email, password) values ("phild@mail.com", "secret");
