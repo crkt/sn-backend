@@ -40,23 +40,26 @@ create table count_rating (movie_id integer,
                           votes integer,
                           FOREIGN KEY (movie_id) REFERENCES movie(id));
 
-
-CREATE TRIGGER count AFTER INSERT ON rating
-                     FOR EACH ROW
-                     BEGIN
-                     UPDATE count_rating SET count_rating.movie_id = NEW.movie_id,
-                                             count_rating.votes = (select count(user_id) from rating where rating.movie_id = NEW.movie_id) where movie_id = NEW.movie_id;
-
-/*CREATE TRIGGER inc_count AFTER UPDATE ON rating
-                         FOR EACH ROW
-                         UPDATE count_rating SET count_rating.votes = (select count(user_id) from rating where rating.movie_id = NEW.movie_id) where movie_id = NEW.movie_id;
-*/
-
 create table movie_genre (movie_id integer, 
                          genre_id integer,
                          FOREIGN KEY (movie_id) REFERENCES movie(id),
                          FOREIGN KEY (genre_id) REFERENCES genre(id));
 
+
+CREATE TRIGGER create_rating AFTER INSERT ON movie
+       FOR EACH ROW INSERT INTO avg_rating values (NEW.id, 0, 0);
+
+CREATE TRIGGER update_avg AFTER INSERT ON rating
+       FOR EACH ROW UPDATE avg_rating
+       SET rating = (SELECT AVG(rating) from rating where rating.movie_id=avg_rating.movie_id),
+           nr_votes = (SELECT COUNT(user_id) from rating where rating.movie_id=avg_rating.movie_id) 
+       WHERE avg_rating.movie_id=NEW.movie_id;
+
+CREATE TRIGGER update_rating AFTER UPDATE ON rating
+       FOR EACH ROW UPDATE avg_rating
+       SET rating = (SELECT AVG(rating) from rating where rating.movie_id=avg_rating.movie_id),
+           nr_votes = (SELECT COUNT(user_id) from rating where rating.movie_id=avg_rating.movie_id) 
+       WHERE avg_rating.movie_id=NEW.movie_id;
 
 
 insert into genre (genre) values ('action');
