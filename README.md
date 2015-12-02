@@ -60,7 +60,7 @@ SET PASSWORD FOR 'sortnight'@'localhost' = PASSWORD('secret');
 GRANT ALL ON sortnight.* TO 'sortnight'@'localhost';
 ```
 
-The users name is: sortnight, and it's password is "secret".
+The user name is: sortnight, and it's password is "secret".
 
 You then need to add the database tables,relations and data. This is done by doing:
 (While logged in as your sortnight user, mysql -u sortnight -p)
