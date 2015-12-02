@@ -32,7 +32,8 @@ create table movie (id integer AUTO_INCREMENT PRIMARY KEY,
 
 create table users (id integer AUTO_INCREMENT PRIMARY KEY,
                    email varchar(255) UNIQUE NOT NULL,
-                   password text NOT NULL);
+                   password text NOT NULL,
+                   username varchar(50) UNIQUE NOT NULL);
 
 create table rating (user_id integer,
                     movie_id integer,
