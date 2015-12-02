@@ -7,7 +7,8 @@
             [ring.middleware.stacktrace :refer :all]
             [ring.adapter.jetty :refer :all]
             [sn-backend.search :as search]
-            [sn-backend.user :as user])
+            [sn-backend.user :as user]
+            [sn-backend.movie :as movie])
   (:gen-class))
 
 
@@ -30,6 +31,10 @@
   [req]
   (handle-request req search/search-movie 400 200))
 
+(defn change-rating
+  [req]
+  (handle-request req movie/update-rating 400 200))
+
 (defn create-user
   "Creates a user in the database, if the email is taken returns an error object. Refer to the user file to see what it contains."
   [req]
@@ -40,6 +45,7 @@
   [req]
   (handle-request req user/login-user 400 202))
 
+
 ;; handler : nil -> response
 ;; the routing of the application
 ;; returns a response depending on the requested resource.
@@ -47,6 +53,8 @@
   (GET "/" [] (response {}))
   (PUT "/search/movie" request
        (search-for-movie request))
+  (PUT "/movie/rating" request
+       (change-rating request))
   (POST "/user/register" request
         (create-user request))
   (PUT "/user/login" request
