@@ -89,10 +89,21 @@
 ;;*****************************************************
 ;; Movie queries
 ;;*****************************************************
+(defn has-user-rated-movie?
+  [movie_id user_id]
+  (not (nil? (first (select "rating"
+                            (where (and (= :user_id user_id)
+                                        (= :movie_id movie_id))))))))
+
 (defn update-rating 
   [movie_id rating user_id]
-  (insert "rating"
-          (values {:movie_id movie_id :rating rating :user_id user_id})))
+  (if (has-user-rated-movie?)
+    (update "rating"
+            (set-fields {:rating rating})
+            (where {:user_id user_id}
+                   {:movie_id movie_id}))
+    (insert "rating"
+            (values {:user_id user_id :movie_id movie_id :rating rating}))))
 
 
 ;;*****************************************************
