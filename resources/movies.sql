@@ -48,7 +48,7 @@ insert into movie (title, description, picture, year, country_id, characters, ru
 insert into movie_genre (movie_id, genre_id) values (7,1);
 insert into movie_genre (movie_id, genre_id) values (7,2);
 
-insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('The Good, the Bad and the Ugly','A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.','the-good,-the-bad-and-the-ugly.jpg',,1966,2,'Tuco, Blondie, Sentenza / Angel Eyes',161,'NR','Sergio Leone','Luciano Vincenzoni, Sergio Leone','Clint Eastwood, Eli Wallach, Lee Van Cleef');
+insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('The Good, the Bad and the Ugly','A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.','the-good,-the-bad-and-the-ugly.jpg',1966,2,'Tuco, Blondie, Sentenza / Angel Eyes',161,'NR','Sergio Leone','Luciano Vincenzoni, Sergio Leone','Clint Eastwood, Eli Wallach, Lee Van Cleef');
 insert into movie_genre (movie_id, genre_id) values (8,6);
 
 insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('The Lord of the Rings The Return of the King','Gandalf and Aragorn lead the World of Men against Saurons army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.','the-lord-of-the-rings-the-return-of-the-king.jpg',2003,1,'Everard Proudfoot, Elanor Gamgee (as Alexandra Astin), Sam',201,'PG','Peter Jackson','J. R. R. Tolkien, Fran Walsh','Elijah Wood, Viggo Mortensen, Ian McKellen');
@@ -62,7 +62,7 @@ insert into movie (title, description, picture, year, country_id, characters, ru
 insert into movie_genre (movie_id, genre_id) values (11,7);
 insert into movie_genre (movie_id, genre_id) values (11,8);
 
-insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('Star Wars Episode V The Empire Strikes Back','After the rebels have been brutally overpowered by the Empire on their newly established base, Luke Skywalker takes advanced Jedi training with Master Yoda, while his friends are pursued by Darth Vader as part of his plan to capture Luke.','star-wars-episode-v-the-empire-strikes-back.jpg',1980,1,'Luke Skywalker, Han Solo, Princess Leia',124,'PG','Irvin Kershner,' 'Leigh Brackett, Lawrence Kasdan','Mark Hamill, Harrison Ford, Carrie Fisher');
+insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('Star Wars Episode V The Empire Strikes Back','After the rebels have been brutally overpowered by the Empire on their newly established base, Luke Skywalker takes advanced Jedi training with Master Yoda, while his friends are pursued by Darth Vader as part of his plan to capture Luke.','star-wars-episode-v-the-empire-strikes-back.jpg',1980,1,'Luke Skywalker, Han Solo, Princess Leia',124,'PG','Irvin Kershner', 'Leigh Brackett, Lawrence Kasdan','Mark Hamill, Harrison Ford, Carrie Fisher');
 insert into movie_genre (movie_id, genre_id) values (12,3);
 insert into movie_genre (movie_id, genre_id) values (12,7);
 insert into movie_genre (movie_id, genre_id) values (12,8);
@@ -90,7 +90,7 @@ insert into movie (title, description, picture, year, country_id, characters, ru
 insert into movie_genre (movie_id, genre_id) values (18,3);
 insert into movie_genre (movie_id, genre_id) values (18,11);
 
-insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('Star Wars Episode IV-A New Hope','Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a wookiee and two droids to save the universe from the Empires world-destroying battle-station, while also attempting to rescue Princess Leia from the evil Darth Vader.','star-wars-episode-iv-a-new-hope.jpg',1977,1,'Luke Skywalker, Han Solo, Princess Leia Organa',121,'PG','George Lucas','George Lucas,' 'Mark Hamill, Harrison Ford, Carrie Fisher');
+insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('Star Wars Episode IV-A New Hope','Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a wookiee and two droids to save the universe from the Empires world-destroying battle-station, while also attempting to rescue Princess Leia from the evil Darth Vader.','star-wars-episode-iv-a-new-hope.jpg',1977,1,'Luke Skywalker, Han Solo, Princess Leia Organa',121,'PG','George Lucas','George Lucas', 'Mark Hamill, Harrison Ford, Carrie Fisher');
 insert into movie_genre (movie_id, genre_id) values (19,3);
 insert into movie_genre (movie_id, genre_id) values (19,7);
 insert into movie_genre (movie_id, genre_id) values (19,8);	
@@ -127,7 +127,7 @@ insert into movie_genre (movie_id, genre_id) values (26,14);
 insert into movie_genre (movie_id, genre_id) values (26,2);
 insert into movie_genre (movie_id, genre_id) values (26,9);	
 
-insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('Léon The Professional','Mathilda, a 12-year-old girl, is reluctantly taken in by Léon, a professional assassin, after her family is murdered. Léon and Mathilda form an unusual relationship, as she becomes his protégée and learns the assassins trade.','léon-the-professional.jpg',1994,1,'Léon, Stansfield, Mathilda',110,'R','Luc Besson,Luc Besson','Jean Reno, Gary Oldman, Natalie Portman');
+insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('Léon The Professional','Mathilda, a 12-year-old girl, is reluctantly taken in by Léon, a professional assassin, after her family is murdered. Léon and Mathilda form an unusual relationship, as she becomes his protégée and learns the assassins trade.','léon-the-professional.jpg',1994,1,'Léon, Stansfield, Mathilda',110,'R','Luc Besson','Luc Besson','Jean Reno, Gary Oldman, Natalie Portman');
 insert into movie_genre (movie_id, genre_id) values (27,1);
 insert into movie_genre (movie_id, genre_id) values (27,2);
 insert into movie_genre (movie_id, genre_id) values (27,12);
@@ -135,26 +135,26 @@ insert into movie_genre (movie_id, genre_id) values (27,12);
 insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('Once Upon a Time in the West','Epic story of a mysterious stranger with a harmonica who joins forces with a notorious desperado to protect a beautiful widow from a ruthless assassin working for the railroad.','once-upon-a-time-in-the-west.jpg',1968,2,'Jill McBain, Frank, Cheyenne',175,'PG-13','Sergio Leone',' Sergio Donati, Sergio Leone',' Henry Fonda, Charles Bronson, Claudia Cardinale');
 insert into movie_genre (movie_id, genre_id) values (28,6);
  
-insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('Interstellar','A team of explorers travel through a wormhole in space in an attempt to ensure humanitys survival.','interstellar.jpg',2014,1,'Murph (older), Cooper, Murph (10 Yrs.)',169,'PG-13','Christopher Nolan','Jonathan Nolan, Christopher Nolan',' Matthew McConaughey, Anne Hathaway, Jessica Chastain')
+insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('Interstellar','A team of explorers travel through a wormhole in space in an attempt to ensure humanitys survival.','interstellar.jpg',2014,1,'Murph (older), Cooper, Murph (10 Yrs.)',169,'PG-13','Christopher Nolan','Jonathan Nolan, Christopher Nolan','Matthew McConaughey, Anne Hathaway, Jessica Chastain');
 insert into movie_genre (movie_id, genre_id) values (29,7);
 insert into movie_genre (movie_id, genre_id) values (29,2);    
 insert into movie_genre (movie_id, genre_id) values (29,11);
  
-insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('Saving Private Ryan','Following the Normandy Landings, a group of U.S. soldiers go behind enemy lines to retrieve a paratrooper whose brothers have been killed in action.','saving-private-ryan.jpg',1998,1,'Captain Miller, Sergeant Horvath, Private Reiben',169,'R','Steven Spielberg,Robert Rodat','Tom Hanks, Matt Damon, Tom Sizemore');
+insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('Saving Private Ryan','Following the Normandy Landings, a group of U.S. soldiers go behind enemy lines to retrieve a paratrooper whose brothers have been killed in action.','saving-private-ryan.jpg',1998,1,'Captain Miller, Sergeant Horvath, Private Reiben',169,'R','Steven Spielberg','Robert Rodat','Tom Hanks, Matt Damon, Tom Sizemore');
 insert into movie_genre (movie_id, genre_id) values (30,3);
 insert into movie_genre (movie_id, genre_id) values (30,2);
 insert into movie_genre (movie_id, genre_id) values (30,15);  
  
-insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('Spirited Away','During her familys move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.','spirited-away.jpg',2001,1,'Chihiro Ogino / Sen, Haku, Yubaba / Zeniba',125,'PG','Hayao Miyazaki,Hayao Miyazaki',' Daveigh Chase, Suzanne Pleshette, Miyu Irino');
+insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('Spirited Away','During her familys move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.','spirited-away.jpg',2001,1,'Chihiro Ogino / Sen, Haku, Yubaba / Zeniba',125,'PG','Hayao Miyazaki','Hayao Miyazaki',' Daveigh Chase, Suzanne Pleshette, Miyu Irino');
 insert into movie_genre (movie_id, genre_id) values (31,16);
 insert into movie_genre (movie_id, genre_id) values (31,7);
 insert into movie_genre (movie_id, genre_id) values (31,13);  
  
-insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('American History X','A former neo-nazi skinhead tries to prevent his younger brother from going down the same wrong path that he did.,american-history-x.jpg,',1998,1,'Derek Vinyard, Danny Vinyard, Doris Vinyard',119,'R','Tony Kaye,David McKenna','Edward Norton, Edward Furlong, Beverly DAngelo');
+insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('American History X','A former neo-nazi skinhead tries to prevent his younger brother from going down the same wrong path that he did.','american-history-x.jpg',1998,1,'Derek Vinyard, Danny Vinyard, Doris Vinyard',119,'R','Tony Kaye', 'David McKenna','Edward Norton, Edward Furlong, Beverly DAngelo');
 insert into movie_genre (movie_id, genre_id) values (32,1);
 insert into movie_genre (movie_id, genre_id) values (32,2);    
  
-insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('Casablanca','Set in Casablanca, Morocco during the early days of World War II: An American expatriate meets a former lover, with unforeseen complications.','casablanca.jpg',1942,1,'Rick Blaine, Ilsa Lund, Victor Laszlo',120,'PG','Michael Curtiz',' Julius J. Epstein, Philip G. Epstein','Humphrey Bogart, Ingrid Bergman, Paul Henreid');
+insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('Casablanca','Set in Casablanca, Morocco during the early days of World War II: An American expatriate meets a former lover, with unforeseen complications.','casablanca.jpg',1942,1,'Rick Blaine, Ilsa Lund, Victor Laszlo',120,'PG','Michael Curtiz','Julius J. Epstein, Philip G. Epstein','Humphrey Bogart, Ingrid Bergman, Paul Henreid');
 insert into movie_genre (movie_id, genre_id) values (33,2);
 insert into movie_genre (movie_id, genre_id) values (33,9);
 insert into movie_genre (movie_id, genre_id) values (33,15);  
@@ -164,7 +164,7 @@ insert into movie_genre (movie_id, genre_id) values (34,17);
 insert into movie_genre (movie_id, genre_id) values (34,10);  
 insert into movie_genre (movie_id, genre_id) values (34,12);
  
-insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('City Lights','With the aid of a wealthy erratic tippler, a dewy-eyed tramp who has fallen in love with a sightless flower girl accumulates money to be able to help her medically.','city-lights.jpg',1931,1,'A Blind Girl, The Blind Girls Grandmother, An Eccentric Millionaire',87,'Passed,Charles Chaplin,Charles Chaplin,''Charles Chaplin, Virginia Cherrill, Florence Lee');
+insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('City Lights','With the aid of a wealthy erratic tippler, a dewy-eyed tramp who has fallen in love with a sightless flower girl accumulates money to be able to help her medically.','city-lights.jpg',1931,1,'A Blind Girl, The Blind Girls Grandmother, An Eccentric Millionaire',87,'Passed','Charles Chaplin','Charles Chaplin','Charles Chaplin, Virginia Cherrill, Florence Lee');
 insert into movie_genre (movie_id, genre_id) values (35,14);
 insert into movie_genre (movie_id, genre_id) values (35,2);
 insert into movie_genre (movie_id, genre_id) values (35,9);    
@@ -182,7 +182,7 @@ insert into movie_genre (movie_id, genre_id) values (38,4);
 insert into movie_genre (movie_id, genre_id) values (38,14);
 insert into movie_genre (movie_id, genre_id) values (38,2);
  
-insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('Modern Times','The Tramp struggles to live in modern industrial society with the help of a young homeless woman.','modern-times.jpg',1936,1,'A Factory Worker, A Gamin, Cafe Proprietor',87,'G', 'Charles Chaplin, Charles Chaplin,''Charles Chaplin, Paulette Goddard, Henry Bergman');
+insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('Modern Times','The Tramp struggles to live in modern industrial society with the help of a young homeless woman.','modern-times.jpg',1936,1,'A Factory Worker, A Gamin, Cafe Proprietor',87,'G', 'Charles Chaplin', 'Charles Chaplin','Charles Chaplin, Paulette Goddard, Henry Bergman');
 insert into movie_genre (movie_id, genre_id) values (39,14);
 insert into movie_genre (movie_id, genre_id) values (39,2);
  
@@ -194,7 +194,7 @@ insert into movie_genre (movie_id, genre_id) values (40,8);
 insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('Terminator 2 Judgment Day','A cyborg, identical to the one who failed to kill Sarah Connor, must now protect her young son, John Connor, from a more advanced cyborg, made out of liquid metal.','terminator-2-judgment-day.jpg',1991,1,'The Terminator, Sarah Connor, John Connor',137,'R','James Cameron',' James Cameron, William Wisher Jr.',' Arnold Schwarzenegger, Linda Hamilton, Edward Furlong');
 insert into movie_genre (movie_id, genre_id) values (41,11);
  
-insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('Whiplash','A promising young drummer enrolls at a cut-throat music conservatory where his dreams of greatness are mentored by an instructor who will stop at nothing to realize a students potential.','whiplash.jpg',2014,1,'Andrew, Fletcher, Jim Neimann',107,'R','Damien Chazelle,Damien Chazelle','Miles Teller, J.K. Simmons, Melissa Benoist');
+insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('Whiplash','A promising young drummer enrolls at a cut-throat music conservatory where his dreams of greatness are mentored by an instructor who will stop at nothing to realize a students potential.','whiplash.jpg',2014,1,'Andrew, Fletcher, Jim Neimann',107,'R','Damien Chazelle','Damien Chazelle','Miles Teller, J.K. Simmons, Melissa Benoist');
 insert into movie_genre (movie_id, genre_id) values (42,2);
 insert into movie_genre (movie_id, genre_id) values (42,18);  
  
@@ -212,12 +212,12 @@ insert into movie (title, description, picture, year, country_id, characters, ru
 insert into movie_genre (movie_id, genre_id) values (45,10);
 insert into movie_genre (movie_id, genre_id) values (45,12);
  
-insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('Back to the Future','A young man is accidentally sent 30 years into the past in a time-traveling DeLorean invented by his friend, Dr. Emmett Brown, and must make sure his high-school-age parents unite in order to save his own existence.','back-to-the-future.jpg',1985,1,'Marty McFly, Dr. Emmett Brown, Lorraine Baines',116,'PG','Robert Zemeckis,''Robert Zemeckis, Bob Gale','Michael J. Fox, Christopher Lloyd, Lea Thompson');
+insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('Back to the Future','A young man is accidentally sent 30 years into the past in a time-traveling DeLorean invented by his friend, Dr. Emmett Brown, and must make sure his high-school-age parents unite in order to save his own existence.','back-to-the-future.jpg',1985,1,'Marty McFly, Dr. Emmett Brown, Lorraine Baines',116,'PG','Robert Zemeckis','Robert Zemeckis, Bob Gale','Michael J. Fox, Christopher Lloyd, Lea Thompson');
 insert into movie_genre (movie_id, genre_id) values (46,7);
 insert into movie_genre (movie_id, genre_id) values (46,14);
 insert into movie_genre (movie_id, genre_id) values (46,11);
        
-insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('Gladiator','When a Roman general is betrayed and his family murdered by an emperors corrupt son, he comes to Rome as a gladiator to seek revenge.','gladiator.jpg',2000,1,'Maximus, Commodus, Lucilla',155,'R','Ridley Scott,''David Franzoni, David Franzoni',' Russell Crowe, Joaquin Phoenix, Connie Nielsen');
+insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('Gladiator','When a Roman general is betrayed and his family murdered by an emperors corrupt son, he comes to Rome as a gladiator to seek revenge.','gladiator.jpg',2000,1,'Maximus, Commodus, Lucilla',155,'R','Ridley Scott','David Franzoni, David Franzoni',' Russell Crowe, Joaquin Phoenix, Connie Nielsen');
 insert into movie_genre (movie_id, genre_id) values (47,3);
 insert into movie_genre (movie_id, genre_id) values (47,2);
  
@@ -230,3 +230,5 @@ insert into movie_genre (movie_id, genre_id) values (49,14);
 insert into movie_genre (movie_id, genre_id) values (49,15);  
  
 insert into movie (title, description, picture, year, country_id, characters, runtime, mature_rating_id, director, writer, stars) values ('Sunset Blvd.','A hack screenwriter writes a screenplay for a former silent-film star who has faded into Hollywood obscurity.','sunset-blvd..jpg',1950,1,'Joe Gillis, Norma Desmond, Max Von Mayerling',110,'NR','Billy Wilder',' Charles Brackett, Billy Wilder',' William Holden, Gloria Swanson, Erich von Stroheim');
+insert into movie_genre (movie_id, genre_id) values(50,2);
+insert into movie_genre (movie_id, genre_id) values(50,19);
