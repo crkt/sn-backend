@@ -97,7 +97,7 @@
 
 (defn update-rating 
   [movie_id rating user_id]
-  (if (has-user-rated-movie?)
+  (if (has-user-rated-movie? movie_id user_id)
     (update "rating"
             (set-fields {:rating rating})
             (where {:user_id user_id}
