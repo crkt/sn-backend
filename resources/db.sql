@@ -16,7 +16,9 @@ create table genre (id integer AUTO_INCREMENT PRIMARY KEY,
 
 create table movie (id integer AUTO_INCREMENT PRIMARY KEY, 
                    title varchar(50), 
-                   year integer, 
+                   year integer,
+                   picture text,
+                   country_id integer,
                    runtime integer,
                    description text,
                    characters text,
@@ -52,7 +54,6 @@ create table movie_genre (movie_id integer,
                          genre_id integer,
                          FOREIGN KEY (movie_id) REFERENCES movie(id),
                          FOREIGN KEY (genre_id) REFERENCES genre(id));
-
 
 
 source triggers.sql
