@@ -12,3 +12,7 @@
 (defn all-genres
   []
   (db/get-all-genres))
+
+(defn all-movies
+  []
+  (db/get-all-movies))

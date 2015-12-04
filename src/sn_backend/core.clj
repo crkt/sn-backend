@@ -41,6 +41,10 @@
   []
   (movie/all-genres))
 
+(defn get-movies
+  []
+  (movie/all-movies))
+
 (defn create-user
   "Creates a user in the database, if the email is taken returns an error object. Refer to the user file to see what it contains."
   [req]
@@ -63,6 +67,8 @@
        (change-rating request))
   (GET "/movie/genres" request
        (get-genres))
+  (GET "/movie/all" request
+       (get-movies))
   (POST "/user/register" request
         (create-user request))
   (PUT "/user/login" request

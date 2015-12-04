@@ -98,6 +98,10 @@
   []
   (select "genre"))
 
+(defn get-all-movies
+  []
+  (map create-movie (select "movie")))
+
 ;;*****************************************************
 ;; User queries
 ;;*****************************************************
@@ -144,7 +148,7 @@
                    (and (= (key x) :title) (not-nil? (val x))) {:title ['like (val x)]})) 
                 args)))
 
-(defn search-movie [& {:keys [genres runtime year title]}]
+(defn search-movie [& {:keys [genres runtime year title] :as args}]
   (map create-movie (select "movie"
                             (where (create-constraints :genres genres :runtime runtime :year year :title title)))))
 
