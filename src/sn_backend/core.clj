@@ -35,6 +35,12 @@
   [req]
   (handle-request req movie/update-rating 400 200))
 
+
+;; Fix this into a macro?
+(defn get-genres
+  []
+  (movie/all-genres))
+
 (defn create-user
   "Creates a user in the database, if the email is taken returns an error object. Refer to the user file to see what it contains."
   [req]
@@ -55,6 +61,8 @@
        (search-for-movie request))
   (PUT "/movie/rating" request
        (change-rating request))
+  (GET "/movie/genres" request
+       (get-genres))
   (POST "/user/register" request
         (create-user request))
   (PUT "/user/login" request

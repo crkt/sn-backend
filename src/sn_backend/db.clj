@@ -94,6 +94,9 @@
   (insert "rating"
           (values {:movie_id movie_id :rating rating :user_id user_id})))
 
+(defn get-all-genres
+  []
+  (select "genre"))
 
 ;;*****************************************************
 ;; User queries

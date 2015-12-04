@@ -8,3 +8,7 @@
         rating (:value body)
         user_id (:user_id body)]
     (db/update-rating movie_id rating user_id)))
+
+(defn all-genres
+  []
+  (db/get-all-genres))
