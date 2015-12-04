@@ -46,7 +46,7 @@
   (into [] (map (fn [x]
                   (:movie_id x)) (select "movie_genre"
                         (fields :movie_id)
-                        (where {:movie_genre.genre_id [in (genres-q genres)]})))))
+                        (where {:movie_genre.genre_id [in genres]})))))
 
 ;; all-movie-genres : number -> seq({:genre ""},{:genre ""})
 (defn all-movie-genres
