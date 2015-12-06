@@ -137,18 +137,23 @@
   [x]
   (not (nil? x)))
 
+(defn not-empty?
+  [x]
+  (not (empty? x)))
+
 
 ;; filter nil values in the future...?
 (defn create-constraints [& {:keys [genres runtime year title] :as args}]
   (into {} (map (fn [x]
                   (cond
-                   (and (= (key x) :genres) (not-nil? (val x))) {:id ['in (movie-genres-q (val x))]}
+                   (and (= (key x) :genres) (and (not-nil? (val x)) (not-empty? (val x)))) {:id ['in (movie-genres-q (val x))]}
                    (and (= (key x) :runtime) (not-nil? (val x))) {:runtime ['= (val x)]}
                    (and (= (key x) :year) (not-nil? (val x))) {:year ['= (val x)]}
                    (and (= (key x) :title) (not-nil? (val x))) {:title ['like (val x)]})) 
                 args)))
 
 (defn search-movie [& {:keys [genres runtime year title] :as args}]
+  (println "The args are  " args)
   (map create-movie (select "movie"
                             (where (create-constraints :genres genres :runtime runtime :year year :title title)))))
 

@@ -13,6 +13,7 @@
 
 (defn search-movie 
   [body]
+  (println "Search args" body)
   (let [genres (genre-ids (:genres body))
         runtime (:runtime body)
         year (:year body)
