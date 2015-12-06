@@ -153,7 +153,6 @@
                 args)))
 
 (defn search-movie [& {:keys [genres runtime year title] :as args}]
-  (println "The args are  " args)
   (map create-movie (select "movie"
                             (where (create-constraints :genres genres :runtime runtime :year year :title title)))))
 
