@@ -7,22 +7,33 @@ drop table if exists users;
 drop table if exists genre;
 drop table if exists movie;
 
-
-
-
+drop trigger if exists create_rating;
+drop trigger if exists update_avg;
+drop trigger if exists update_rating;
 
 create table genre (id integer AUTO_INCREMENT PRIMARY KEY,
                    genre varchar(30));
 
 create table movie (id integer AUTO_INCREMENT PRIMARY KEY, 
                    title varchar(50), 
-                   year integer, 
+                   year integer,
+                   picture text,
+                   country_id integer,
+                   runtime integer,
                    description text,
-                   runtime integer);
+                   characters text,
+                   mature_rating_id integer,
+                   director text,
+                   writer text,
+                   stars text);
+
+
+
 
 create table users (id integer AUTO_INCREMENT PRIMARY KEY,
                    email varchar(255) UNIQUE NOT NULL,
-                   password text NOT NULL);
+                   password text NOT NULL,
+                   username varchar(50) UNIQUE NOT NULL);
 
 create table rating (user_id integer,
                     movie_id integer,
@@ -46,56 +57,7 @@ create table movie_genre (movie_id integer,
                          FOREIGN KEY (genre_id) REFERENCES genre(id));
 
 
-CREATE TRIGGER create_rating AFTER INSERT ON movie
-       FOR EACH ROW INSERT INTO avg_rating values (NEW.id, 0, 0);
-
-CREATE TRIGGER update_avg AFTER INSERT ON rating
-       FOR EACH ROW UPDATE avg_rating
-       SET rating = (SELECT AVG(rating) from rating where rating.movie_id=avg_rating.movie_id),
-           nr_votes = (SELECT COUNT(user_id) from rating where rating.movie_id=avg_rating.movie_id) 
-       WHERE avg_rating.movie_id=NEW.movie_id;
-
-CREATE TRIGGER update_rating AFTER UPDATE ON rating
-       FOR EACH ROW UPDATE avg_rating
-       SET rating = (SELECT AVG(rating) from rating where rating.movie_id=avg_rating.movie_id),
-           nr_votes = (SELECT COUNT(user_id) from rating where rating.movie_id=avg_rating.movie_id) 
-       WHERE avg_rating.movie_id=NEW.movie_id;
-
-
-insert into genre (genre) values ('action');
-insert into genre (genre) values ('drama');
-insert into genre (genre) values ('comedy');
-insert into genre (genre) values ('sci-fi');
-insert into genre (genre) values ('thriller');
-insert into genre (genre) values ('slapstick');
-insert into genre (genre) values ('adventure');
-insert into genre (genre) values ('crime');
-
-insert into movie (title, year, runtime) values ('Jurassic Park', 1993, 127);
-
-insert into movie_genre (movie_id, genre_id) values (1,1);
-insert into movie_genre (movie_id, genre_id) values (1,4);
-insert into movie_genre (movie_id, genre_id) values (1,7);
-
-insert into movie (title, year, runtime) values ('Nightcrawler', 2014, 117);
-
-insert into movie_genre (movie_id, genre_id) values (2,5);
-insert into movie_genre (movie_id, genre_id) values (2,8);
-
-
-insert into movie(title, year, runtime) values ('The Godfather', 1972, 175);
-
-insert into movie_genre (movie_id, genre_id) values (3,2);
-insert into movie_genre (movie_id, genre_id) values (3,8);
-
-insert into movie (title, year, runtime) values ('The Dark Knight', 2008, 152);
-
-insert into movie_genre (movie_id, genre_id) values (4,1);
-insert into movie_genre (movie_id, genre_id) values (4,2);
-insert into movie_genre (movie_id, genre_id) values (4,8);
+source triggers.sql
+source movies.sql
 
 insert into users (email, password) values ("phil@mail.com", "secret");
-insert into users (email, password) values ("phila@mail.com", "secret");
-insert into users (email, password) values ("philb@mail.com", "secret");
-insert into users (email, password) values ("philc@mail.com", "secret");
-insert into users (email, password) values ("phild@mail.com", "secret");

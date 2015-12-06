@@ -89,10 +89,21 @@
 ;;*****************************************************
 ;; Movie queries
 ;;*****************************************************
+(defn has-user-rated-movie?
+  [movie_id user_id]
+  (not (nil? (first (select "rating"
+                            (where {:user_id [= user_id]
+                                    :movie_id [= movie_id]}))))))
+
 (defn update-rating 
   [movie_id rating user_id]
-  (insert "rating"
-          (values {:movie_id movie_id :rating rating :user_id user_id})))
+  (if (has-user-rated-movie? movie_id user_id)
+    (sql-update "rating"
+            (set-fields {:rating rating})
+            (where {:user_id [= user_id]
+                    :movie_id [= movie_id]}))
+    (insert "rating"
+            (values {:user_id user_id :movie_id movie_id :rating rating}))))
 
 (defn get-all-genres
   []
@@ -107,21 +118,21 @@
 ;;*****************************************************
 ;; PASSWORD(password)
 (defn insert-user 
-  [email password]
+  [email name password]
   (insert "users"
-          (values {:email email :password password})))
+          (values {:email email :username name :password password})))
 
 (defn select-user-id
   [id]
   (select "users"
-          (fields :email :id)
+          (fields :username :id)
           (where (= :id id))))
 
-(defn select-user-email
-  [email password]
+(defn select-user-name
+  [name password]
   (select "users"
-          (fields :email :id)
-          (where (and (= :email email)
+          (fields :id :username)
+          (where (and (= :username name)
                       (= :password password)))))
 
 (defn does-user-exist?
