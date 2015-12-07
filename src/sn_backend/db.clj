@@ -192,4 +192,4 @@
 
 (defn random-movie
   []
-  (first (into [] (select "movie"))))
+  (rand-nth (select "movie")))

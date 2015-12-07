@@ -32,7 +32,7 @@
   (handle-request req search/search-movie 400 200))
 
 (defn random-movie
-  [req]
+  []
   (search/random-movie))
 
 (defn change-rating
@@ -68,7 +68,7 @@
   (PUT "/search/movie" request
        (search-for-movie request))
   (GET "/search/random" request
-       (random-movie request))
+       (random-movie))
   (PUT "/movie/rating" request
        (change-rating request))
   (GET "/movie/genres" request
