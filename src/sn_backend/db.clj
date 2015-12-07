@@ -14,6 +14,12 @@
 (defrecord User [id username email password])
 
 ;;*****************************************************
+;; Rating Record
+;;*****************************************************
+(defrecord Rating [average votes])
+
+
+;;*****************************************************
 ;; Database connection config
 ;;*****************************************************
 (defdb ^{:dynamic false} db (mysql {:db "sortnight"
@@ -67,6 +73,7 @@
   "Creates a movie record from a hash of movie values"
   [row]
   (let [genres (all-movie-genres (:id row))
+        rating (get-movie-rating (:id row))
         m (->Movie (:id row)
                    (:title row)
                    (:description row)
@@ -74,7 +81,7 @@
                    (:year row)
                    (:runtime row)
                    genres
-                   {:user_rating 5 :votes 20 :average 3.5})]
+                   rating)]
     m))
 
 ;; create-user : {:key val...} -> User Record
@@ -87,6 +94,10 @@
         u (->User id email password)]
     u))
 
+(defn create-rating
+  [row]
+  (let (r (->Rating (:rating row)
+                    (:nr_votes row)))))
 
 
 ;;*****************************************************
@@ -115,6 +126,12 @@
 (defn get-all-movies
   []
   (map create-movie (select "movie")))
+
+(defn get-movie-rating
+  [movie_id]
+  (select "avg_rating"
+          (fields :rating :nr_votes)
+          (where (= :movie_id movie_id))))
 
 ;;*****************************************************
 ;; User queries
