@@ -6,12 +6,12 @@
 ;;*****************************************************
 ;; Movie Record
 ;;*****************************************************
-(defrecord Movie [id title year runtime genres])
+(defrecord Movie [id title plot picture year runtime genres rating])
 
 ;;*****************************************************
 ;; User Record
 ;;*****************************************************
-(defrecord User [id email password])
+(defrecord User [id username email password])
 
 ;;*****************************************************
 ;; Database connection config
@@ -69,9 +69,12 @@
   (let [genres (all-movie-genres (:id row))
         m (->Movie (:id row)
                    (:title row)
+                   (:description row)
+                   (:picture row)
                    (:year row)
                    (:runtime row)
-                   genres)]
+                   genres
+                   {:user_rating 5 :votes 20 :average 3.5})]
     m))
 
 ;; create-user : {:key val...} -> User Record
