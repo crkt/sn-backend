@@ -7,9 +7,9 @@
   (let [movie_id (:movie body)
         rating (:rating body)
         user_id (:user_id body)]
-	(if (> (db/update-rating movie_id rating user_id) 0)
-	{}
-        {:error "rating" :message "Could not update rating."})))
+    (if (db/has-user-rated-movie? movie_id user_id)
+      (db/update-rating movie_id rating user_id)
+      (db/insert-rating movie_id rating user_id))))
 
 (defn all-genres
   []

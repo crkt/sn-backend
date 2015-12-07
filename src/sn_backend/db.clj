@@ -67,9 +67,9 @@
 
 (defn get-movie-rating
   [movie_id]
-  (select "avg_rating"
-          (fields :rating :nr_votes)
-          (where (= :movie_id movie_id))))
+  (into {} (select "avg_rating"
+                   (fields :rating :nr_votes)
+                   (where (= :movie_id movie_id)))))
 
 
 ;;*****************************************************
@@ -118,14 +118,22 @@
                                     :movie_id [= movie_id]}))))))
 
 (defn update-rating 
+  [movie_id rating user_id]  
+  (sql-update "rating"
+              (set-fields {:rating rating})
+              (where {:user_id [= user_id]
+                      :movie_id [= movie_id]}))
+  (into {} (select "rating"
+                   (where {:user_id [= user_id]
+                           :movie_id [= movie_id]}))))
+
+(defn insert-rating
   [movie_id rating user_id]
-  (if (has-user-rated-movie? movie_id user_id)
-    (sql-update "rating"
-            (set-fields {:rating rating})
-            (where {:user_id [= user_id]
-                    :movie_id [= movie_id]}))
-    (insert "rating"
-            (values {:user_id user_id :movie_id movie_id :rating rating}))))
+  (insert "rating"
+          (values {:user_id user_id :movie_id movie_id :rating rating}))
+  (into {} (select "rating"
+                   (where {:user_id [= user_id]
+                           :movie_id [= movie_id]}))))
 
 (defn get-all-genres
   []
@@ -192,4 +200,4 @@
 
 (defn random-movie
   []
-  (rand-nth (select "movie")))
+  (rand-nth (map create-movie (select "movie"))))
