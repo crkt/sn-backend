@@ -47,10 +47,6 @@ create table avg_rating (movie_id integer,
                         nr_votes integer,
                         FOREIGN KEY (movie_id) REFERENCES movie(id));
 
-create table count_rating (movie_id integer,
-                          votes integer,
-                          FOREIGN KEY (movie_id) REFERENCES movie(id));
-
 create table movie_genre (movie_id integer, 
                          genre_id integer,
                          FOREIGN KEY (movie_id) REFERENCES movie(id),
