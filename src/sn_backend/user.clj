@@ -9,13 +9,13 @@
   [body]
   (let [email (:email body)
         password (:password body)
-        name (:name body)
+        name (:username body)
         id (:generated_key (db/insert-user email name password))]
     (into {} (db/select-user-id id))))
 
 (defn login-user
   [body]
-  (let [name (:name body)
+  (let [name (:username body)
         password (:password body)]
     (into {} (db/select-user-name name password))))
 

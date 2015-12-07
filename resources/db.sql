@@ -60,4 +60,4 @@ create table movie_genre (movie_id integer,
 source triggers.sql
 source movies.sql
 
-insert into users (email, password) values ("phil@mail.com", "secret");
+insert into users (username,email, password) values ("crock","phil@mail.com", "secret");
