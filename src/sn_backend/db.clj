@@ -46,7 +46,7 @@
   (into [] (map (fn [x]
                   (:movie_id x)) (select "movie_genre"
                         (fields :movie_id)
-                        (where {:movie_genre.genre_id [in (genres-q genres)]})))))
+                        (where {:movie_genre.genre_id [in genres]})))))
 
 ;; all-movie-genres : number -> seq({:genre ""},{:genre ""})
 (defn all-movie-genres
@@ -105,6 +105,13 @@
     (insert "rating"
             (values {:user_id user_id :movie_id movie_id :rating rating}))))
 
+(defn get-all-genres
+  []
+  (select "genre"))
+
+(defn get-all-movies
+  []
+  (map create-movie (select "movie")))
 
 ;;*****************************************************
 ;; User queries
@@ -141,18 +148,22 @@
   [x]
   (not (nil? x)))
 
+(defn not-empty?
+  [x]
+  (not (empty? x)))
+
 
 ;; filter nil values in the future...?
 (defn create-constraints [& {:keys [genres runtime year title] :as args}]
   (into {} (map (fn [x]
                   (cond
-                   (and (= (key x) :genres) (not-nil? (val x))) {:id ['in (movie-genres-q (val x))]}
+                   (and (= (key x) :genres) (and (not-nil? (val x)) (not-empty? (val x)))) {:id ['in (movie-genres-q (val x))]}
                    (and (= (key x) :runtime) (not-nil? (val x))) {:runtime ['= (val x)]}
                    (and (= (key x) :year) (not-nil? (val x))) {:year ['= (val x)]}
                    (and (= (key x) :title) (not-nil? (val x))) {:title ['like (val x)]})) 
                 args)))
 
-(defn search-movie [& {:keys [genres runtime year title]}]
+(defn search-movie [& {:keys [genres runtime year title] :as args}]
   (map create-movie (select "movie"
                             (where (create-constraints :genres genres :runtime runtime :year year :title title)))))
 
