@@ -4,8 +4,8 @@
 
 (defn update-rating
   [body]
-  (let [movie_id (:id body)
-        rating (:value body)
+  (let [movie_id (:movie body)
+        rating (:rating body)
         user_id (:user_id body)]
     (if (> (db/update-rating movie_id rating user_id) 0)
       {}
