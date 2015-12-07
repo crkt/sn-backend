@@ -19,5 +19,9 @@
         title (:title body)]
     (db/search-movie :genres genres :runtime runtime :year year :title title)))
 
+(defn random-movie
+  []
+  (db/random-movie))
+
 
 

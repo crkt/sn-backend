@@ -65,6 +65,13 @@
                         (join "movie_genre" (= :movie_genre.movie_id id))
                         (where (= :genre.id :movie_genre.genre_id))))))
 
+(defn get-movie-rating
+  [movie_id]
+  (select "avg_rating"
+          (fields :rating :nr_votes)
+          (where (= :movie_id movie_id))))
+
+
 ;;*****************************************************
 ;; Record creation
 ;;*****************************************************
@@ -96,8 +103,9 @@
 
 (defn create-rating
   [row]
-  (let (r (->Rating (:rating row)
-                    (:nr_votes row)))))
+  (let [r (->Rating (:rating row)
+                    (:nr_votes row))]
+    r))
 
 
 ;;*****************************************************
@@ -126,12 +134,6 @@
 (defn get-all-movies
   []
   (map create-movie (select "movie")))
-
-(defn get-movie-rating
-  [movie_id]
-  (select "avg_rating"
-          (fields :rating :nr_votes)
-          (where (= :movie_id movie_id))))
 
 ;;*****************************************************
 ;; User queries
@@ -188,3 +190,6 @@
                             (where (create-constraints :genres genres :runtime runtime :year year :title title)))))
 
 
+(defn random-movie
+  []
+  (first (into [] (select "movie"))))
