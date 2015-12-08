@@ -18,6 +18,15 @@
 ;;*****************************************************
 (defrecord Rating [average votes])
 
+;;*****************************************************
+;; Read from a file
+;;*****************************************************
+(defn read-from-file-with-trusted-contents [filename]
+  (with-open [r (java.io.PushbackReader.
+                 (clojure.java.io/reader filename))]
+    (binding [*read-eval* false]
+      (read r))))
+
 
 ;;*****************************************************
 ;; Database connection config
