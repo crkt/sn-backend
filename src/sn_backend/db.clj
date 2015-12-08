@@ -135,6 +135,12 @@
                    (where {:user_id [= user_id]
                            :movie_id [= movie_id]}))))
 
+(defn select-movie-id
+  [movie_id]
+  (println "ID" movie_id)
+  (into {} (map create-movie (select "movie"
+                                     (where {:id [= movie_id]})))))
+
 (defn get-all-genres
   []
   (select "genre"))

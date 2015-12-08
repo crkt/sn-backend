@@ -45,6 +45,10 @@
   []
   (movie/all-genres))
 
+(defn get-movie-id
+  [req]
+  (handle-request req movie/movie-id 400 200))
+
 (defn get-movies
   []
   (movie/all-movies))
@@ -75,6 +79,8 @@
        (get-genres))
   (GET "/movie/all" request
        (get-movies))
+  (PUT "/movie/id" request
+       (get-movie-id request))
   (POST "/user/register" request
         (create-user request))
   (PUT "/user/login" request

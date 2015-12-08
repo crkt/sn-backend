@@ -18,3 +18,8 @@
 (defn all-movies
   []
   (db/get-all-movies))
+
+(defn movie-id
+  [body]
+  (let [movie_id (:movie body)]
+    (db/select-movie-id movie_id)))
