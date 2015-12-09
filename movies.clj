@@ -12,8 +12,6 @@
  :stars "Leonardo DiCaprio, Matt Damon, Jack Nicholson"
  :genres ["action" "drama"]
 }
-]
-[
 {:title "The Shawshank Redemption" 
  :description "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency." 
  :picture "http://ia.media-imdb.com/images/M/MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1_SX214_AL_.jpg"
@@ -27,8 +25,6 @@
  :stars "Tim Robbins, Morgan Freeman, Bob Gunton"
  :genres ["crime" "drama"]
 }
-]
-[
 {:title "The Godfather" 
  :description "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son." 
  :picture "http://ia.media-imdb.com/images/M/MV5BMjEyMjcyNDI4MF5BMl5BanBnXkFtZTcwMDA5Mzg3OA@@._V1_SX214_AL_.jpg"
@@ -42,8 +38,6 @@
  :stars "Marlon Brando, Al Pacino, James Caan"
  :genres ["crime" "drama"]
 }
-]
-[
 {:title "The Godfather Part II" 
  :description "The early life and career of Vito Corleone in 1920s New York is portrayed while his son, Michael, expands and tightens his grip on his crime syndicate stretching from Lake Tahoe, Nevada to pre-revolution 1958 Cuba." 
  :picture "http://ia.media-imdb.com/images/M/MV5BNDc2NTM3MzU1Nl5BMl5BanBnXkFtZTcwMTA5Mzg3OA@@._V1_SX214_AL_.jpg"
@@ -57,8 +51,6 @@
  :stars "Al Pacino, Robert De Niro, Robert Duvall"
  :genres ["crime" "drama"]
 }
-]
-[
 {:title "The Dark Knight" 
  :description "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice." 
  :picture "http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SY317_CR0,0,214,317_AL_.jpg"
@@ -72,8 +64,6 @@
  :stars "Christian Bale, Heath Ledger, Aaron Eckhart"
  :genres ["action" "crime" "drama"]
 }
-]
-[
 {:title "12 Angry Men" 
  :description "A dissenting juror in a murder trial slowly manages to convince the others that the case is not as obviously clear as it seemed in court." 
  :picture "http://ia.media-imdb.com/images/M/MV5BODQwOTc5MDM2N15BMl5BanBnXkFtZTcwODQxNTEzNA@@._V1_SX214_AL_.jpg"
@@ -87,8 +77,6 @@
  :stars "Reginald Rose','Henry Fonda, Lee J. Cobb, Martin Balsam"
  :genres ["crime" "drama"]
 }
-]
-[
 {:title "Schindlers List" 
  :description "In Poland during World War II, Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis." 
  :picture "http://ia.media-imdb.com/images/M/MV5BMzMwMTM4MDU2N15BMl5BanBnXkFtZTgwMzQ0MjMxMDE@._V1_SX214_AL_.jpg"
@@ -102,8 +90,6 @@
  :stars "Liam Neeson, Ralph Fiennes, Ben Kingsley"
  :genres ["drama"]
 }
-]
-[
 {:title "Pulp Fiction" 
  :description "The lives of two mob hit men, a boxer, a gangsters wife, and a pair of diner bandits intertwine in four tales of violence and redemption." 
  :picture "http://ia.media-imdb.com/images/M/MV5BMTkxMTA5OTAzMl5BMl5BanBnXkFtZTgwNjA5MDc3NjE@._V1_SX214_AL_.jpg"
@@ -117,8 +103,6 @@
  :stars "John Travolta, Uma Thurman, Samuel L. Jackson"
  :genres ["crime" "drama"]
 }
-]
-[
 {:title "The Good, the Bad and the Ugly" 
  :description "A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery." 
  :picture "http://ia.media-imdb.com/images/M/MV5BOTQ5NDI3MTI4MF5BMl5BanBnXkFtZTgwNDQ4ODE5MDE@._V1_SX214_AL_.jpg"
@@ -132,8 +116,6 @@
  :stars "Clint Eastwood, Eli Wallach, Lee Van Cleef"
  :genres ["western"]
 }
-]
-[
 {:title "The Lord of the Rings The Return of the King" 
  :description "Gandalf and Aragorn lead the World of Men against Saurons army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring."
  :picture "http://ia.media-imdb.com/images/M/MV5BMjE4MjA1NTAyMV5BMl5BanBnXkFtZTcwNzM1NDQyMQ@@._V1_SX214_AL_.jpg"
@@ -147,8 +129,6 @@
  :stars "Elijah Wood, Viggo Mortensen, Ian McKellen"
  :genres ["adventure" "fantasy"]
 }
-]
-[
 {:title "Fight Club" 
  :description "An insomniac office worker, looking for a way to change his life, crosses paths with a devil-may-care soap maker, forming an underground fight club that evolves into something much, much more.."
  :picture "http://ia.media-imdb.com/images/M/MV5BMjIwNTYzMzE1M15BMl5BanBnXkFtZTcwOTE5Mzg3OA@@._V1_SX214_AL_.jpg"
@@ -162,8 +142,6 @@
  :stars "Brad Pitt, Edward Norton, Helena Bonham Carter"
  :genres ["drama"]
 }
-]
-[
 {:title "The Lord of the Rings: The Fellowship of the Ring"
  :description "A meek Hobbit and eight companions set out on a journey to destroy the One Ring and the Dark Lord Sauron."
  :picture "http://ia.media-imdb.com/images/M/MV5BNTEyMjAwMDU1OV5BMl5BanBnXkFtZTcwNDQyNTkxMw@@._V1_SY317_CR1,0,214,317_AL_.jpg"
@@ -177,8 +155,6 @@
  :stars "Elijah Wood, Ian McKellen, Orlando Bloom"
  :genres ["adventure" "fantasy"]
 }
-]
-[
 {:title "Star Wars Episode V The Empire Strikes Back"
  :description "After the rebels have been brutally overpowered by the Empire on their newly established base, Luke Skywalker takes advanced Jedi training with Master Yoda, while his friends are pursued by Darth Vader as part of his plan to capture Luke."
  :picture "http://ia.media-imdb.com/images/M/MV5BMjE2MzQwMTgxN15BMl5BanBnXkFtZTcwMDQzNjk2OQ@@._V1_SY317_CR0,0,214,317_AL_.jpg"
@@ -192,8 +168,6 @@
  :stars "Mark Hamill, Harrison Ford, Carrie Fisher"
  :genres ["action" "adventure" "fantasy"]
 }
-]
-[
 {:title "Forrest Gump"
  :description "Forrest Gump, while not intelligent, has accidentally been present at many historic moments, but his true love, Jenny Curran, eludes him."
  :picture "http://ia.media-imdb.com/images/M/MV5BMTQwMTA5MzI1MF5BMl5BanBnXkFtZTcwMzY5Mzg3OA@@._V1_SX214_AL_.jpg"
@@ -207,8 +181,6 @@
  :stars "Tom Hanks, Robin Wright, Gary Sinise"
  :genres ["drama" "romance"]
 }
-]
-[
 {:title "Inception"
  :description "A thief who steals corporate secrets through use of the dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO."
  :picture "http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX214_AL_.jpg"
@@ -222,8 +194,6 @@
  :stars "Leonardo DiCaprio, Joseph Gordon-Levitt"
  :genres ["action" "mystery" "sci-fi"]
 }
-]
-[
 {:title "One Flew Over the Cuckoos Nest"
  :description "Upon admittance to a mental institution, a brash rebel rallies the patients to take on the oppressive head nurse."
  :picture "http://ia.media-imdb.com/images/M/MV5BMTk5OTA4NTc0NF5BMl5BanBnXkFtZTcwNzI5Mzg3OA@@._V1_SY317_CR12,0,214,317_AL_.jpg"
@@ -237,8 +207,6 @@
  :stars "Jack Nicholson, Louise Fletcher, Michael Berryman"
  :genres ["drama"]
 }
-]
-[
 {:title "The Lord of the Rings The Two Towers"
  :description "While Frodo and Sam edge closer to Mordor with the help of the shifty Gollum, the divided fellowship makes a stand against Saurons new ally, Saruman, and his hordes of Isengard."
  :picture "http://ia.media-imdb.com/images/M/MV5BMTAyNDU0NjY4NTheQTJeQWpwZ15BbWU2MDk4MTY2Nw@@._V1_SY317_CR1,0,214,317_AL_.jpg"
@@ -252,8 +220,6 @@
  :stars "Elijah Wood, Ian McKellen, Viggo Mortensen"
  :genres ["adventure" "fantasy"]
 }
-]
-[
 {:title "Goodfellas"
  :description "Henry Hill and his friends work their way up through the mob hierarchy."
  :picture "http://ia.media-imdb.com/images/M/MV5BMTY2OTE5MzQ3MV5BMl5BanBnXkFtZTgwMTY2NTYxMTE@._V1_SX214_AL_.jpg"
@@ -267,8 +233,6 @@
  :stars "Robert De Niro, Ray Liotta, Joe Pesci"
  :genres ["crime" "drama"]
 }
-]
-[
 {:title "Star Wars Episode IV-A New Hope"
  :description "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a wookiee and two droids to save the universe from the Empires world-destroying battle-station, while also attempting to rescue Princess Leia from the evil Darth Vader."
  :picture "http://ia.media-imdb.com/images/M/MV5BMTU4NTczODkwM15BMl5BanBnXkFtZTcwMzEyMTIyMw@@._V1_SX214_AL_.jpg"
@@ -282,8 +246,6 @@
  :stars "Mark Hamill, Harrison Ford, Carrie Fisher"
  :genres ["action" "fantasy"]
 }
-]
-[
 {:title "Seven Samurai"
  :description "A poor village under attack by bandits recruits seven unemployed samurai to help them defend themselves."
  :picture "http://ia.media-imdb.com/images/M/MV5BMTc5MDY1MjU5MF5BMl5BanBnXkFtZTgwNDM2OTE4MzE@._V1_SY317_CR6,0,214,317_AL_.jpg"
@@ -297,8 +259,6 @@
  :stars "Toshirô Mifune, Takashi Shimura, Keiko Tsushima"
  :genres ["drama"]
 }
-]
-[
 {:title "City of God"
  :description "Two boys growing up in a violent neighborhood of Rio de Janeiro take different paths: one becomes a photographer, the other a drug dealer."
  :picture "http://ia.media-imdb.com/images/M/MV5BMjA4ODQ3ODkzNV5BMl5BanBnXkFtZTYwOTc4NDI3._V1_SX214_AL_.jpg"
@@ -312,8 +272,6 @@
  :stars "Alexandre Rodrigues, Matheus Nachtergaele, Leandro Firmino"
  :genres ["crime" "drama"]
 }
-]
-[
 {:title "Se7en"
  :description "Two detectives, a rookie and a veteran, hunt a serial killer who uses the seven deadly sins as his modus operandi."
  :picture "http://ia.media-imdb.com/images/M/MV5BMTQwNTU3MTE4NF5BMl5BanBnXkFtZTcwOTgxNDM2Mg@@._V1_SX214_AL_.jpg"
@@ -327,8 +285,6 @@
  :stars "Morgan Freeman, Brad Pitt, Kevin Spacey"
  :genres ["crime" "drama"]
 }
-]
-[
 {:title "The Silence of the Lambs"
  :description "A young F.B.I. cadet must confide in an incarcerated and manipulative killer to receive his help on catching another serial killer who skins his victims."
  :picture "http://ia.media-imdb.com/images/M/MV5BMTQ2NzkzMDI4OF5BMl5BanBnXkFtZTcwMDA0NzE1NA@@._V1_SX214_AL_.jpg"
@@ -342,8 +298,6 @@
  :stars "Jodie Foster, Anthony Hopkins, Lawrence A. Bonney"
  :genres ["crime" "drama"]
 }
-]
-[
 {:title "The Usual Suspects"
  :description "A sole survivor tells of the twisty events leading up to a horrific gun battle on a boat, which begin when five criminals meet at a seemingly random police lineup."
  :picture "http://ia.media-imdb.com/images/M/MV5BMTQ2NzkzMDI4OF5BMl5BanBnXkFtZTcwMDA0NzE1NA@@._V1_SX214_AL_.jpg"
@@ -357,8 +311,6 @@
  :stars "Kevin Spacey, Gabriel Byrne, Chazz Palminteri"
  :genres ["crime" "drama"]
 }
-]
-[
 {:title "Its a Wonderful Life"
  :description "An angel helps a compassionate but despairingly frustrated businessman by showing what life would have been like if he never existed."
  :picture "http://ia.media-imdb.com/images/M/MV5BMTMzMzY5NDc4M15BMl5BanBnXkFtZTcwMzc4NjIxNw@@._V1_SX214_AL_.jpg"
@@ -372,8 +324,6 @@
  :stars "James Stewart, Donna Reed, Lionel Barrymore"
  :genres ["drama" "fantasy"]
 }
-]
-[
 {:title "Life Is Beautiful"
  :description "When an open-minded Jewish librarian and his son become victims of the Holocaust, he uses a perfect mixture of will, humor and imagination to protect his son from the dangers around their camp."
  :picture "http://ia.media-imdb.com/images/M/MV5BMTQwMTM2MjE4Ml5BMl5BanBnXkFtZTgwODQ2NTYxMTE@._V1_SX214_AL_.jpg"
@@ -387,8 +337,6 @@
  :stars "Roberto Benigni, Nicoletta Braschi, Giorgio Cantarini"
  :genres ["comedy" "drama"]
 }
-]
-[
 {:title "Léon The Professional"
  :description "Mathilda, a 12-year-old girl, is reluctantly taken in by Léon, a professional assassin, after her family is murdered. Léon and Mathilda form an unusual relationship, as she becomes his protégée and learns the assassins trade."
  :picture "http://ia.media-imdb.com/images/M/MV5BMTgzMzg4MDkwNF5BMl5BanBnXkFtZTcwODAwNDg3OA@@._V1_SY317_CR4,0,214,317_AL_.jpg"
@@ -402,8 +350,6 @@
  :stars "Jean Reno, Gary Oldman, Natalie Portman"
  :genres ["crime" "drama"]
 }
-]
-[
 {:title "Once Upon a Time in the West"
  :description "Epic story of a mysterious stranger with a harmonica who joins forces with a notorious desperado to protect a beautiful widow from a ruthless assassin working for the railroad."
  :picture "http://ia.media-imdb.com/images/M/MV5BMTEyODQzNDkzNjVeQTJeQWpwZ15BbWU4MDgyODk1NDEx._V1_SY317_CR4,0,214,317_AL_.jpg"
@@ -417,8 +363,6 @@
  :stars "Henry Fonda, Charles Bronson, Claudia Cardinale"
  :genres ["western"]
 }
-]
-[
 {:title "Interstellar"
  :description "A team of explorers travel through a wormhole in space in an attempt to ensure humanitys survival."
  :picture "http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX214_AL_.jpg"
@@ -432,8 +376,6 @@
  :stars "Matthew McConaughey, Anne Hathaway, Jessica Chastain"
  :genres ["adventure" "drama" "sci-fi"]
 }
-]
-[
 {:title "Saving Private Ryan"
  :description "Following the Normandy Landings, a group of U.S. soldiers go behind enemy lines to retrieve a paratrooper whose brothers have been killed in action."
  :picture "http://ia.media-imdb.com/images/M/MV5BNjczODkxNTAxN15BMl5BanBnXkFtZTcwMTcwNjUxMw@@._V1_SY317_CR9,0,214,317_AL_.jpg"
@@ -447,8 +389,6 @@
  :stars "Tom Hanks, Matt Damon, Tom Sizemore"
  :genres ["action" "drama"]
 }
-]
-[
 {:title "Spirited Away"
  :description "During her familys move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts."
  :picture "http://ia.media-imdb.com/images/M/MV5BMjYxMDcyMzIzNl5BMl5BanBnXkFtZTYwNDg2MDU3._V1_SY317_CR5,0,214,317_AL_.jpg"
@@ -462,9 +402,6 @@
  :stars "Daveigh Chase, Suzanne Pleshette, Miyu Irino"
  :genres ["animation" "adventure"]
 }
-]
-
-[
 {:title "American History X"
  :description "A former neo-nazi skinhead tries to prevent his younger brother from going down the same wrong path that he did."
  :picture "http://ia.media-imdb.com/images/M/MV5BMjMzNDUwNTIyMF5BMl5BanBnXkFtZTcwNjMwNDg3OA@@._V1_SY317_CR17,0,214,317_AL_.jpg"
@@ -478,8 +415,6 @@
  :stars "Edward Norton, Edward Furlong, Beverly DAngelo"
  :genres ["crime" "drama"]
 }
-]
-[
 {:title "Casablanca"
  :description "Set in Casablanca, Morocco during the early days of World War II: An American expatriate meets a former lover, with unforeseen complications."
  :picture "http://ia.media-imdb.com/images/M/MV5BMjQwNDYyNTk2N15BMl5BanBnXkFtZTgwMjQ0OTMyMjE@._V1_SX214_AL_.jpg"
@@ -493,8 +428,6 @@
  :stars "Humphrey Bogart, Ingrid Bergman, Paul Henreid"
  :genres ["drama" "romance"]
 }
-]
-[
 {:title "Psycho"
  :description "A Phoenix secretary steals $40,000 from her employers client, goes on the run and checks into a remote motel run by a young man under the domination of his mother."
  :picture "http://ia.media-imdb.com/images/M/MV5BMTgzMzM3NDY0NF5BMl5BanBnXkFtZTgwNDgwNDgwNzE@._V1_SX214_AL_.jpg"
@@ -508,8 +441,6 @@
  :stars "Anthony Perkins, Janet Leigh, Vera Miles"
  :genres ["horror" "mystery"]
 }
-]
-[
 {:title "City Lights"
  :description "With the aid of a wealthy erratic tippler, a dewy-eyed tramp who has fallen in love with a sightless flower girl accumulates money to be able to help her medically."
  :picture "http://ia.media-imdb.com/images/M/MV5BMjA3NDQ5MDMzOV5BMl5BanBnXkFtZTgwODY2MjcyMjE@._V1_SX214_AL_.jpg"
@@ -523,8 +454,6 @@
  :stars "Charles Chaplin, Virginia Cherrill, Florence Lee"
  :genres ["comedy" "drama"]
 }
-]
-[
 {:title "Raiders of the Lost Ark"
  :description "Archaeologist and adventurer Indiana Jones is hired by the US government to find the Ark of the Covenant before the Nazis."
  :picture "http://ia.media-imdb.com/images/M/MV5BMjA0ODEzMTc1Nl5BMl5BanBnXkFtZTcwODM2MjAxNA@@._V1_SX214_AL_.jpg"
@@ -538,8 +467,6 @@
  :stars "Harrison Ford, Karen Allen, Paul Freeman"
  :genres ["action" "adventure"]
 }
-]
-[
 {:title "Rear Window"
  :description "Rear Window','A wheelchair bound photographer spies on his neighbours from his apartment window and becomes convinced one of them has committed murder.."
  :picture "http://ia.media-imdb.com/images/M/MV5BMTg5MjM4NzEwOF5BMl5BanBnXkFtZTgwMDE1NjM0MTE@._V1_SY317_CR2,0,214,317_AL_.jpg"
@@ -553,8 +480,6 @@
  :stars "James Stewart, Grace Kelly, Wendell Corey"
  :genres ["action" "adventure"]
 }
-]
-[
 {:title "The Intouchables"
  :description "After he becomes a quadriplegic from a paragliding accident, an aristocrat hires a young man from the projects to be his caregiver."
  :picture "http://ia.media-imdb.com/images/M/MV5BMTYxNDA3MDQwNl5BMl5BanBnXkFtZTcwNTU4Mzc1Nw@@._V1_SX214_AL_.jpg"
@@ -568,8 +493,6 @@
  :stars "François Cluzet, Omar Sy, Anne Le Ny"
  :genres ["drama" "comedy"]
 }
-]
-[
 {:title "Modern Times"
  :description "The Tramp struggles to live in modern industrial society with the help of a young homeless woman."
  :picture "http://ia.media-imdb.com/images/M/MV5BMjAyMTkxNjI5OF5BMl5BanBnXkFtZTYwMjI2MjA5._V1_SY317_CR9,0,214,317_AL_.jpg"
@@ -583,8 +506,6 @@
  :stars "Charles Chaplin, Paulette Goddard, Henry Bergman"
  :genres ["drama" "comedy"]
 }
-]
-[
 {:title "The Green Mile"
  :description "The lives of guards on Death Row are affected by one of their charges: a black man accused of child murder and rape, yet who has a mysterious gift."
  :picture "http://ia.media-imdb.com/images/M/MV5BMTUxMzQyNjA5MF5BMl5BanBnXkFtZTYwOTU2NTY3._V1_SY317_CR0,0,214,317_AL_.jpg"
@@ -598,8 +519,6 @@
  :stars "Tom Hanks, Michael Clarke Duncan, David Morse"
  :genres ["crime" "drama"]
 }
-]
-[
 {:title "Terminator 2 Judgment Day"
  :description "A cyborg, identical to the one who failed to kill Sarah Connor, must now protect her young son, John Connor, from a
  more advanced cyborg, made out of liquid metal."
@@ -614,8 +533,6 @@
  :stars "Arnold Schwarzenegger, Linda Hamilton, Edward Furlong"
  :genres ["action" "sci-fi"]
 }
-]
-[
 {:title "Whiplash"
  :description "A promising young drummer enrolls at a cut-throat music conservatory where his dreams of greatness are mentored by an instructor who will stop at nothing to realize a students potential."
  :picture "http://ia.media-imdb.com/images/M/MV5BMTU4OTQ3MDUyMV5BMl5BanBnXkFtZTgwOTA2MjU0MjE@._V1_SX214_AL_.jpg"
@@ -629,8 +546,6 @@
  :stars "Miles Teller, J.K. Simmons, Melissa Benoist"
  :genres ["drama" "music"]
 }
-]
-[
 {:title "The Pianist"
  :description "A Polish Jewish musician struggles to survive the destruction of the Warsaw ghetto of World War II."
  :picture "http://ia.media-imdb.com/images/M/MV5BMTc4OTkyOTA3OF5BMl5BanBnXkFtZTYwMDIxNjk5._V1_SX214_AL_.jpg"
@@ -644,8 +559,6 @@
  :stars "Adrien Brody, Thomas Kretschmann, Frank Finlay"
  :genres ["drama" "war"]
 }
-]
-[
 {:title "Memento"
  :description "A man creates a strange system to help him remember things so he can hunt for the murderer of his wife without his short-term memory loss being an obstacle."
  :picture "http://ia.media-imdb.com/images/M/MV5BMTc4MjUxNDAwN15BMl5BanBnXkFtZTcwMDMwNDg3OA@@._V1_SY317_CR12,0,214,317_AL_.jpg"
@@ -659,8 +572,6 @@
  :stars "Guy Pearce, Carrie-Anne Moss, Joe Pantoliano"
  :genres ["mystery" "thriller"]
 }
-]
-[
 {:title "Back to the Future"
  :description "A young man is accidentally sent 30 years into the past in a time-traveling DeLorean invented by his friend, Dr. Emmett Brown, and must make sure his high-school-age parents unite in order to save his own existence."
  :picture "http://ia.media-imdb.com/images/M/MV5BMjA5NTYzMDMyM15BMl5BanBnXkFtZTgwNjU3NDU2MTE@._V1_SX214_AL_.jpg"
@@ -674,8 +585,6 @@
  :stars "Michael J. Fox, Christopher Lloyd, Lea Thompson"
  :genres ["adventure" "comedy"]
 }
-]
-[
 {:title "Gladiator"
  :description "When a Roman general is betrayed and his family murdered by an emperors corrupt son, he comes to Rome as a gladiator to seek revenge."
  :picture "http://ia.media-imdb.com/images/M/MV5BMTgwMzQzNTQ1Ml5BMl5BanBnXkFtZTgwMDY2NTYxMTE@._V1_SY317_CR0,0,214,317_AL_.jpg"
@@ -689,8 +598,6 @@
  :stars "Russell Crowe, Joaquin Phoenix, Connie Nielsen"
  :genres ["action" "drama"]
 }
-]
-[
 {:title "Apocalypse Now"
  :description "During the Vietnam War, Captain Willard is sent on a dangerous mission into Cambodia to assassinate a renegade colonel who has set himself up as a god among a local tribe."
  :picture "http://ia.media-imdb.com/images/M/MV5BMTcyMzQ5NDM4OV5BMl5BanBnXkFtZTcwODUwNDg3OA@@._V1_SY317_CR12,0,214,317_AL_.jpg"
@@ -704,8 +611,6 @@
  :stars "Martin Sheen, Marlon Brando, Robert Duvall"
  :genres ["war" "drama"]
 }
-]
-[
 {:title "Dr. Strangelove or How I Learned to Stop Worrying and Love the Bomb"
  :description "An insane general triggers a path to nuclear holocaust that a war room full of politicians and generals frantically try to stop."
  :picture "http://ia.media-imdb.com/images/M/MV5BMTU2ODM2NTkxNF5BMl5BanBnXkFtZTcwOTMwMzU3Mg@@._V1_SX214_AL_.jpg"
@@ -719,8 +624,6 @@
  :stars "Peter Sellers, George C. Scott, Sterling Hayden"
  :genres ["comedy" "war"]
 }
-]
-[
 {:title "Sunset Blvd."
  :description "A hack screenwriter writes a screenplay for a former silent-film star who has faded into Hollywood obscurity."
  :picture "http://ia.media-imdb.com/images/M/MV5BMTc3NDYzODAwNV5BMl5BanBnXkFtZTgwODg1MTczMTE@._V1_SX214_AL_.jpg"
