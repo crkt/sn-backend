@@ -6,7 +6,7 @@
 ;;*****************************************************
 ;; Movie Record
 ;;*****************************************************
-(defrecord Movie [id title plot picture year runtime genres rating])
+(defrecord Movie [id title plot picture year runtime genres rating characters writers directors stars matureRating])
 
 ;;*****************************************************
 ;; User Record
@@ -97,7 +97,12 @@
                    (:year row)
                    (:runtime row)
                    genres
-                   rating)]
+                   rating
+                   (:characters row)
+                   (:writer row)
+                   (:director row)
+                   (:stars row)
+                   (:mature_rating_id row))]
     m))
 
 ;; create-user : {:key val...} -> User Record
