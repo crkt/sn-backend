@@ -22,7 +22,7 @@ create table movie (id integer AUTO_INCREMENT PRIMARY KEY,
                    runtime integer,
                    description text,
                    characters text,
-                   mature_rating_id integer,
+                   mature_rating_id text,
                    director text,
                    writer text,
                    stars text);
