@@ -637,4 +637,277 @@
  :stars "William Holden, Gloria Swanson, Erich von Stroheim"
  :genres ["drama" "film-noir"]
 }
+{:title "The Prestige"
+ :description "Two stage magicians engage in competitive one-upmanship in an attempt to create the ultimate stage illusion."
+ :picture "http://ia.media-imdb.com/images/M/MV5BMjA4NDI0MTIxNF5BMl5BanBnXkFtZTYwNTM0MzY2._V1_SX214_AL_.jpg"
+ :year 2006
+ :country_id 1
+ :characters "Robert Angier, Alfred Borden, Cutter"
+ :runtime 130
+ :mature_rating_id "NR"
+ :director "Christopher Nolan"
+ :writer "Christopher Priest, Christopher Nolan, Jonathan Nolan" 
+ :stars "Hugh Jackman, Christian Bale, Michael Cane"
+ :genres ["drama" "mystery" "sci-fi"]
+}
+{:title "Alien"
+ :description "The commercial vessel Nostromo receives a distress call from an unexplored planet. After searching for survivors, the crew heads home only to realize that a deadly bioform has joined them."
+ :picture "http://ia.media-imdb.com/images/M/MV5BMTU1ODQ4NjQyOV5BMl5BanBnXkFtZTgwOTQ3NDU2MTE@._V1_SX214_AL_.jpg"
+ :year 1979
+ :country_id 1
+ :characters "Dallas, Ripley, Lambert"
+ :runtime 117
+ :mature_rating_id "PG"
+ :director "Ridley Scott"
+ :writer "Dan O'Bannon, Ronald Shusett, "
+ :stars "Tom Skerritt, Sigourney Weaver, Veronica Cartwright"
+ :genres ["horror" "sci-fi"]
+}
+{:title "The Lion King"
+ :description "Lion cub and future king Simba searches for his identity. His eagerness to please others and penchant for testing his boundaries sometimes gets him into trouble."
+ :picture "http://ia.media-imdb.com/images/M/MV5BMjEyMzgwNTUzMl5BMl5BanBnXkFtZTcwNTMxMzM3Ng@@._V1_SY317_CR15,0,214,317_AL_.jpg"
+ :year 1994
+ :country_id 1 
+ :characters "Simba, Mufasa, Scar"
+ :runtime 89
+ :mature_rating_id "G"
+ :director "Roger Allers, Rob Minkoff"
+ :writer "Irene Mecchi, Jonathan Roberts"
+ :stars "Matthew Broderick, James Earl Jones, Jeremy Irons"
+ :genres ["drama" "animation" "adventure"]
+}
+{:title "The Great Dictator"
+ :description "Dictator Adenoid Hynkel tries to expand his empire while a poor Jewish barber tries to avoid persecution from Hynkel's regime."
+ :picture "http://ia.media-imdb.com/images/M/MV5BMTQ5NDAwMDgzOV5BMl5BanBnXkFtZTgwNDI2MjA0MjE@._V1_SY317_CR0,0,214,317_AL_.jpg"
+ :year 1940
+ :country_id 1
+ :characters "Hynkel, Napaloni, Schultz"
+ :runtime 125
+ :mature_rating_id ""
+ :director "Charles Chaplin"
+ :writer "Charles Chaplin"
+ :stars "Charles Chaplin, Jack Oakie, Reginald Gardiner"
+ :genres ["drama" "comedy" "war"]
+}
+{:title "The Lives of Others"
+ :description "In 1984 East Berlin, an agent of the secret police, conducting surveillance on a writer and his lover, finds himself becoming increasingly absorbed by their lives."
+ :picture "http://ia.media-imdb.com/images/M/MV5BNDUzNjYwNDYyNl5BMl5BanBnXkFtZTcwNjU3ODQ0MQ@@._V1_SX214_AL_.jpg"
+ :year 2006
+ :country_id 1
+ :characters "Christa-Maria Sieland, Hauptmann Gerd Wiesler, Georg Dreyman"
+ :runtime 137
+ :mature_rating_id "R"
+ :director "Florian Henckel von Donnersmarck"
+ :writer "Florian Henckel von Donnersmarck"
+ :stars "Martina Gedeck, Ulrich mühe, Sebastian Koch"
+ :genres ["drama" "thriller"]
+}
+{:title "Cinema Paradiso"
+ :description "A filmmaker recalls his childhood, when he fell in love with the movies at his village's theater and formed a deep friendship with the theater's projectionist."
+ :picture "http://ia.media-imdb.com/images/M/MV5BMjIzMTgzOTEwOF5BMl5BanBnXkFtZTgwNTUxNjcxMTE@._V1_SY317_CR0,0,214,317_AL_.jpg"
+ :year 1988
+ :country_id 1
+ :characters "Maria Di Vita, Spaccafico, Anna"
+ :runtime 155
+ :mature_rating_id "G"
+ :director "Giuseppe Tornatore"
+ :writer "Giuseppe Tornatore, Vanna Paoli"
+ :stars "Antonella Attili, Enzo Cannavale, Isa Danieli"
+ :genres ["drama"]
+}
+{:title "The Shining"
+ :description "A family heads to an isolated hotel for the winter where an evil and spiritual presence influences the father into violence, while his psychic son sees horrific forebodings from the past and of the future."
+ :picture "http://ia.media-imdb.com/images/M/MV5BODMxMjE3NTA4Ml5BMl5BanBnXkFtZTgwNDc0NTIxMDE@._V1_SY317_CR1,0,214,317_AL_.jpg"
+ :year 1980
+ :country_id 1
+ :characters "Jack Torrance, Wendy Torrance, Danny Torrance"
+ :runtime 146
+ :mature_rating_id "G"
+ :director "Stanley Kubrick"
+ :writer "Stephen King, Stanley Kubrick"
+ :stars "Jack Nicholson, Shelley Duvall, Danny Lloyd"
+ :genres ["horror" "drama"]
+}
+{:title "Paths of Glory"
+ :description "After refusing to attack an enemy position, a general accuses the soldiers of cowardice and their commanding officer must defend them."
+ :picture "http://ia.media-imdb.com/images/M/MV5BMTUxNTcxMjI5NV5BMl5BanBnXkFtZTcwNTcyNjI3Mw@@._V1_SY317_CR3,0,214,317_AL_.jpg"
+ :year 1958
+ :country_id 1
+ :characters "Col. Dax, Cpl. Philippe Paris, Gen. George Broulard"
+ :runtime 88
+ :mature_rating_id "PG"
+ :director "Stanley Kubrick"
+ :writer "Stanley Kubrick, Calder Willingham"
+ :stars "Kirk Douglas, Ralph Meeker, Adolphe Menjou"
+ :genres ["drama" "war"]
+}
+{:title "Django Unchained"
+ :description "With the help of a German bounty hunter, a freed slave sets out to rescue his wife from a brutal Mississippi plantation owner."
+ :picture "http://ia.media-imdb.com/images/M/MV5BMjIyNTQ5NjQ1OV5BMl5BanBnXkFtZTcwODg1MDU4OA@@._V1_SX214_AL_.jpg"
+ :year 2012
+ :country_id 1
+ :characters "Django, Dr. King Schultz, Calvin Candie"
+ :runtime 165
+ :mature_rating_id "PG"
+ :director "Quentin Tarantino"
+ :writer "Quentin Tarantino"
+ :stars "Jamie Foxx, Christoph Waltz, Leonardo DiCaprio"
+ :genres ["western"]
+}
+{:title "The Dark Knight Rises"
+ :description "Eight years after the Joker's reign of anarchy, the Dark Knight is forced to return from his imposed exile to save Gotham City from the brutal guerrilla terrorist Bane with the help of the enigmatic Selina."
+ :picture "http://ia.media-imdb.com/images/M/MV5BMTk4ODQzNDY3Ml5BMl5BanBnXkFtZTcwODA0NTM4Nw@@._V1_SX214_AL_.jpg"
+ :year 2012
+ :country_id 1
+ :characters "Bruce Wayne, Commissioner Gordon, Bane"
+ :runtime 164
+ :mature_rating_id "PG"
+ :director "Christopher Nolan"
+ :writer "Christopher Nolan, Jonathan Nolan"
+ :stars "Christian Bale, Gary Oldman, Tom Hardy"
+ :genres ["action" "thriller"]
+}
+{:title "Wall-E"
+ :description "In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind."
+ :picture "http://ia.media-imdb.com/images/M/MV5BMTczOTA3MzY2N15BMl5BanBnXkFtZTcwOTYwNjE2MQ@@._V1_SY317_CR0,0,214,317_AL_.jpg"
+ :year 2008
+ :country_id 1
+ :characters "Wall-E, EVE, Captain"
+ :runtime 98
+ :mature_rating_id "G"
+ :director "Andrew Stanton"
+ :writer "Andrew Stanton, Pete Docter"
+ :stars "Ben Burtt, Elissa Knight, Jeff Garlin"
+ :genres ["animation" "adventure" "family"]
+}
+{:title "American Beauty"
+ :description "A sexually frustrated suburban father has a mid-life crisis after becoming infatuated with his daughter's best friend."
+ :picture "http://ia.media-imdb.com/images/M/MV5BMjM4NTI5NzYyNV5BMl5BanBnXkFtZTgwNTkxNTYxMTE@._V1_SY317_CR0,0,214,317_AL_.jpg"
+ :year 1999
+ :country_id 1
+ :characters "Lester Burnham, Carolyn Burnham, Jane Burnham"
+ :runtime 122
+ :mature_rating_id "PG"
+ :director "Sam Mendes"
+ :writer "Alan Ball"
+ :stars "Kevin Spacey, Annette Bening, Thora Birch"
+ :genres ["drama" "romance"]
+}
+{:title "Grave of The Fireflies"
+ :description "A tragic film covering a young boy and his little sister's struggle to survive in Japan during World War II."
+ :picture "http://ia.media-imdb.com/images/M/MV5BMTgyMzUwMTMxMl5BMl5BanBnXkFtZTgwODYyMDk2MjE@._V1_SY317_CR1,0,214,317_AL_.jpg"
+ :year 1988
+ :country_id 1
+ :characters "Seita, Setsuko, Mother"
+ :runtime 89
+ :mature_rating_id "G"
+ :director "Isao Takahata"
+ :writer "Akiyuki Nosaka, Isao Takahata"
+ :stars "Tsutomu Tatsumi, Ayano Shiraishi, Yoshiko Shinohara"
+ :genres ["animation" "drama" "war"]
+}
+{:title "Aliens"
+ :description "The planet from Alien (1979) has been colonized, but contact is lost. This time, the rescue team has impressive firepower, but will it be enough?"
+ :picture "http://ia.media-imdb.com/images/M/MV5BMTYzNzU5MzQ4OV5BMl5BanBnXkFtZTcwMDcxNDg3OA@@._V1_SY317_CR12,0,214,317_AL_.jpg"
+ :year 1986
+ :country_id 1
+ :characters "Ripley, Newt, Corporal Hicks"
+ :runtime 137
+ :mature_rating_id "R"
+ :director "James Cameron"
+ :writer "James Cameron, David Giler "
+ :stars "Sigourney Weaver, Carrie Henn, Michael Biehn"
+ :genres ["action" "horror" "sci-fi"]
+}
+{:title "Citizen Kane"
+ :description "Following the death of a publishing tycoon, news reporters scramble to discover the meaning of his final utterance."
+ :picture "http://ia.media-imdb.com/images/M/MV5BMTQ2Mjc1MDQwMl5BMl5BanBnXkFtZTcwNzUyOTUyMg@@._V1_SY317_CR0,0,214,317_AL_.jpg"
+ :year 1941
+ :country_id 1
+ :characters "Jedediah Leland, Susan Alexander Kane, Mary Kane"
+ :runtime 119
+ :mature_rating_id "G"
+ :director "Orson Welles"
+ :writer "Herman J. Mankiewicz , Orson Welles "
+ :stars "Joseph Cotten, Dorothy Comingore, Agnes Moorehead"
+ :genres ["drama" "mystery"]
+}
+{:title "North by Nortwest"
+ :description "A hapless New York advertising executive is mistaken for a government agent by a group of foreign spies, and is pursued across the country while he looks for a way to survive."
+ :picture "http://ia.media-imdb.com/images/M/MV5BMjQwMTQ0MzgwNl5BMl5BanBnXkFtZTgwNjc4ODE4MzE@._V1_SX214_AL_.jpg"
+ :year 1959
+ :country_id 1
+ :characters "Roger O. Thornhill, Eve Kendall, Phillip Vandamm"
+ :runtime 136
+ :mature_rating_id "G"
+ :director "Alfred Hitchcock"
+ :writer "Ernest Lehman"
+ :stars "Cary Grant, Eva Marie Saint, James Mason"
+ :genres ["adventure" "crime" "mystery"]
+}
+{:title "Oldboy - Revenge"
+ :description "After being kidnapped and imprisoned for 15 years, Oh Dae-Su is released, only to find that he must find his captor in 5 days."
+ :picture "http://ia.media-imdb.com/images/M/MV5BMTI3NTQyMzU5M15BMl5BanBnXkFtZTcwMTM2MjgyMQ@@._V1_SY317_CR0,0,214,317_AL_.jpg"
+ :year 2003
+ :country_id 1
+ :characters "Dae-su Oh, Woo-jin Lee, Mi-do"
+ :runtime 120
+ :mature_rating_id "PG"
+ :director "Chan-wook Park"
+ :writer "Garon Tsuchiya, Nobuaki Minegishi"
+ :stars "Min-sik Choi, Ji-tae Yu, Hye-jeong Kang"
+ :genres ["drama" "mystery" "thriller"]
+}
+{:title "Princess Mononoke"
+ :description "On a journey to find the cure for a Tatarigami's curse, Ashitaka finds himself in the middle of a war between the forest gods and Tatara, a mining colony. In this quest he also meets San, the Mononoke Hime."
+ :picture "http://ia.media-imdb.com/images/M/MV5BMjgzNTUwODQzN15BMl5BanBnXkFtZTcwMTc4ODE3OQ@@._V1_SX214_AL_.jpg"
+ :year 1997
+ :country_id 1
+ :characters "Ashitaka, Jigo, Lady Eboshi"
+ :runtime 134
+ :mature_rating_id "G"
+ :director "Hayao Miyazaki"
+ :writer "Hayao Miyazaki"
+ :stars "Billy Crudup, Billy Bob Thornton, Minnie Driver"
+ :genres ["animation" "adventure" "fantasy"]
+}
+{:title "Vertigo"
+ :description "A retired San Francisco detective suffering from acrophobia investigates the strange activities of an old friend's wife, all the while becoming dangerously obsessed with her."
+ :picture "http://ia.media-imdb.com/images/M/MV5BNzY0NzQyNzQzOF5BMl5BanBnXkFtZTcwMTgwNTk4OQ@@._V1_SX214_AL_.jpg"
+ :year 1958
+ :country_id 1
+ :characters "John 'Scottie' Ferguson, Madeleine Elster / Judy Barton, Midge Wood"
+ :runtime 128
+ :mature_rating_id "PG"
+ :director "Alfred Hitchcock"
+ :writer "Alec Coppel, Samuel A. Taylor"
+ :stars "James Stewart, Kim Novak, Barbara Bel Geddes"
+ :genres ["mystery" "romance" "thriller"]
+}
+{:title "Das Boot"
+ :description "The claustrophobic world of a WWII German U-boat; boredom, filth, and sheer terror."
+ :picture "http://ia.media-imdb.com/images/M/MV5BMjE5Mzk5OTQ0Nl5BMl5BanBnXkFtZTYwNzUwMTQ5._V1_SX214_AL_.jpg"
+ :year 1981
+ :country_id 1
+ :characters "Capt.-Lt. Henrich Lehmann-Willenbrock, Lt. Werner - Correspondent, Chief Engineer Fritz Grade - Der Leitende-Der LI"
+ :runtime 149
+ :mature_rating_id "PG"
+ :director "Wolfgang Petersen"
+ :writer "Wolfgang Petersen, Lothar G. Buchheim"
+ :stars "Jürgen Prochnow, Herbert Grönemeyer, Klaus Wennemann"
+ :genres ["adventure" "drama" "thriller"]
+}
+{:title ""
+ :description ""
+ :picture ""
+ :year 
+ :country_id 
+ :characters ""
+ :runtime 
+ :mature_rating_id ""
+ :director ""
+ :writer ""
+ :stars ""
+ :genres ["" ""]
+}
 ]
