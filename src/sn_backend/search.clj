@@ -13,7 +13,7 @@
 
 (defn search-movie 
   [body]
-  (let [genres (genre-ids (:genres body))
+  (let [genres (:genres body)
         runtime (:runtime body)
         year (:year body)
         title (:title body)]
