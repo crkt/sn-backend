@@ -19,6 +19,7 @@
         title (:title body)]
     (db/search-movie :genres genres :runtime runtime :year year :title title)))
 
+;; user search
 (defn search-movie-user
   [body]
   (let [genres (:genres body)

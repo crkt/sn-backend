@@ -73,7 +73,7 @@
                         (fields :genre)
                         (join "movie_genre" (= :movie_genre.movie_id id))
                         (where (= :genre.id :movie_genre.genre_id))))))
-
+ 
 (defn get-movie-rating
   [movie_id]
   (into {} (select "avg_rating"
@@ -142,14 +142,14 @@
         password (:password row)
         u (->User id email password)]
     u))
-
+;; create rating 
 (defn create-rating
   [row]
   (let [r (->Rating (:rating row)
                     (:nr_votes row)
                     nil)]
     r))
-
+;; create user-rating
 (defn create-user-rating 
   [row]
   (let [r (->Rating (:rating row)
@@ -243,11 +243,12 @@
                    (and (= (key x) :title) (not-nil? (val x))) {:title ['like (val x)]})) 
                 args)))
 
+
 (defn search-movie [& {:keys [genres runtime year title] :as args}]
   (map create-movie (select "movie"
                             (where (create-constraints :genres genres :runtime runtime :year year :title title)))))
 
-
+;; query for user rating
 (defn search-movie-user [user & {:keys [genres runtime year title] :as args}]
   (map (partial create-movie-user user) (select "movie"
                                                 (where (create-constraints :genres genres :runtime runtime :year year :title title)))))
