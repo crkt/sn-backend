@@ -161,7 +161,7 @@
 			
 (defn add-genre-to-movie [id genre]
 	(insert "movie_genre"
-		(values {:movie_id id :genre_id genre}])))
+		(values {:movie_id id :genre_id genre})))
 						   
 (defn insert-movies 
   [movie]
