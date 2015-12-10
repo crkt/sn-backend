@@ -86,8 +86,8 @@
         user_rating  (into {} (select "rating"
                                       (fields [:rating :user_rating])
                                       (where {:user_id [= user_id]
-                                              :movie_id [= movie_id]})))])
-  (conj avg_rating user_rating))
+                                              :movie_id [= movie_id]})))]
+    (conj avg_rating user_rating)))
 
 ;;*****************************************************
 ;; Record creation
@@ -117,7 +117,7 @@
   "Creates a movie record from a hash of movie values"
   [user row]
   (let [genres (all-movie-genres (:id row))
-        rating (get-movie-rating-user user)
+        rating (get-movie-rating-user user (:id row))
         m (->Movie (:id row)
                    (:title row)
                    (:description row)
@@ -131,7 +131,7 @@
                    (:director row)
                    (:stars row)
                    (:mature_rating_id row))]
-    m)))
+    m))
 
 ;; create-user : {:key val...} -> User Record
 (defn create-user
