@@ -936,83 +936,83 @@
  :stars "Peter Lorre, Ellen Widmann, Inge Landgut"
  :genres ["crime" "drama" "thriller"]
 }
-{:title ""
- :description ""
- :picture ""
- :year 
- :country_id 
- :characters ""
- :runtime 
- :mature_rating_id ""
- :director ""
- :writer ""
- :stars ""
- :genres ["" ""]
+{:title "Le fabuleux destin d'Amélie Poulain"
+ :description "Amelie is an innocent and naive girl in Paris with her own sense of justice. She decides to help those around her and, along the way, discovers love."
+ :picture "http://ia.media-imdb.com/images/M/MV5BMTYzNjkxMTczOF5BMl5BanBnXkFtZTgwODg5NDc2MjE@._V1_SY317_CR0,0,214,317_AL_.jpg"
+ :year 2001
+ :country_id 1
+ :characters "Amélie Poulain, Nino Quincampoix, Raphaël Poulain"
+ :runtime 122
+ :mature_rating_id "G"
+ :director "Jean-Pierre Jeunet"
+ :writer "Guillaume Laurant, Jean-Pierre Jeunet"
+ :stars "Audrey Tautou, Mathieu Kassovitz, Rufus"
+ :genres ["comedy" "romance"]
 }
-{:title ""
- :description ""
- :picture ""
- :year 
- :country_id 
- :characters ""
- :runtime 
- :mature_rating_id ""
- :director ""
- :writer ""
- :stars ""
- :genres ["" ""]
+{:title "Witness for the Prosecution"
+ :description "Leonard Vole is arrested on suspicion of murdering an elderly acquaintance. He employs an experienced but aging barrister as his defense attorney."
+ :picture "http://ia.media-imdb.com/images/M/MV5BMTc0MjgyNTUyNF5BMl5BanBnXkFtZTcwNDQzMDg0Nw@@._V1_SX214_AL_.jpg"
+ :year 1957
+ :country_id 1
+ :characters "Leonard Vole, Christine Vohl, Sir Wilfrid Roberts"
+ :runtime 116
+ :mature_rating_id "G"
+ :director "Billy Wilder"
+ :writer "Agatha Cristie, Billy Wilder"
+ :stars "Tyrone Power, Marlene Dietrich, Charles Laughton"
+ :genres ["drama" "mystery"]
 }
-{:title ""
- :description ""
- :picture ""
- :year 
- :country_id 
- :characters ""
- :runtime 
- :mature_rating_id ""
- :director ""
- :writer ""
- :stars ""
- :genres ["" ""]
+{:title "Reservoir Dogs"
+ :description "After a simple jewelery heist goes terribly wrong, the surviving criminals begin to suspect that one of them is a police informant."
+ :picture "http://ia.media-imdb.com/images/M/MV5BMTQxMTAwMDQ3Nl5BMl5BanBnXkFtZTcwODMwNTgzMQ@@._V1_SY317_CR5,0,214,317_AL_.jpg"
+ :year 1992
+ :country_id 1
+ :characters "Mr. White - Larry Dimmick, Mr. Orange - Freddy Newandyke, Mr. Blonde - Vic Vega"
+ :runtime 99
+ :mature_rating_id "PG-16"
+ :director "Quentin Tarantino"
+ :writer "Quentin Tarantino, Roger Avary"
+ :stars "Harvey Keitel, Tim Roth, Michael Madsen"
+ :genres ["crime" "drama"]
 }
-{:title ""
- :description ""
- :picture ""
- :year 
+{:title "Braveheart"
+ :description "When his secret bride is executed for assaulting an English soldier who tried to rape her, William Wallace begins a revolt and leads Scottish warriors against the cruel English tyrant who rules Scotland with an iron fist."
+ :picture "http://ia.media-imdb.com/images/M/MV5BNjA4ODYxMDU3Nl5BMl5BanBnXkFtZTcwMzkzMTk3OA@@._V1_SX214_AL_.jpg"
+ :year 1995
  :country_id 
- :characters ""
- :runtime 
- :mature_rating_id ""
- :director ""
- :writer ""
- :stars ""
- :genres ["" ""]
+ :characters "Young William, Malcolm Wallace, John Wallace"
+ :runtime 178
+ :mature_rating_id "PG"
+ :director "Mel Gibson"
+ :writer "Randall Wallace"
+ :stars "James Robinson, Sean Lawlor, Sandy Nelson"
+ :genres ["biography" "drama" "history"]
 }
-{:title ""
- :description ""
- :picture ""
- :year 
- :country_id 
- :characters ""
- :runtime 
- :mature_rating_id ""
- :director ""
- :writer ""
- :stars ""
- :genres ["" ""]
+{:title "Toy Story 3"
+ :description "The toys are mistakenly delivered to a day-care center instead of the attic right before Andy leaves for college, and it's up to Woody to convince the other toys that they weren't abandoned and to return home."
+ :picture "http://ia.media-imdb.com/images/M/MV5BMTgxOTY4Mjc0MF5BMl5BanBnXkFtZTcwNTA4MDQyMw@@._V1_SY317_CR5,0,214,317_AL_.jpg"
+ :year 2010
+ :country_id 1
+ :characters "Woody, Buzz Lightyear, Jessie"
+ :runtime 103
+ :mature_rating_id "G"
+ :director "Lee Unkrich"
+ :writer "John Lasseter, Andrew Stanton"
+ :stars "Tom Hanks, Tim Allen, Joan Cusack"
+ :genres ["animation" "adventure" "comedy"]
 }
-{:title ""
- :description ""
- :picture ""
- :year 
- :country_id 
- :characters ""
- :runtime 
- :mature_rating_id ""
- :director ""
- :writer ""
- :stars ""
- :genres ["" ""]
+{:title " A Clockwork Orange"
+ :description "In future Britain, charismatic delinquent Alex DeLarge is jailed and volunteers for an experimental aversion therapy developed by the government in an effort to solve society's crime problem - but not all goes according to plan."
+ :picture "http://ia.media-imdb.com/images/M/MV5BMTY3MjM1Mzc4N15BMl5BanBnXkFtZTgwODM0NzAxMDE@._V1_SY317_CR0,0,214,317_AL_.jpg"
+ :year 1971
+ :country_id 1
+ :characters "Alex, Mr. Alexander, Chief Guard"
+ :runtime 136
+ :mature_rating_id "PG"
+ :director "Stanley Kubrick"
+ :writer "Stanley Kubrick, Anthony Burgess"
+ :stars "Malcolm McDowell, Patrick Magee, Michael Bates"
+ :genres ["crime" "drama" "sci-fi"]
 }
 {:title ""
  :description ""
