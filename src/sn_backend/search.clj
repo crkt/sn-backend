@@ -19,6 +19,15 @@
         title (:title body)]
     (db/search-movie :genres genres :runtime runtime :year year :title title)))
 
+(defn search-movie-user
+  [body]
+  (let [genres (:genres body)
+        runtime (:runtime body)
+        year (:year body)
+        title (:title body)
+        user (:user body)]
+    (db/search-movie-user user :genres genres :runtime runtime :year year :title title)))
+
 (defn random-movie
   []
   (db/random-movie))
