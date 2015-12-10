@@ -16,7 +16,7 @@
 ;;*****************************************************
 ;; Rating Record
 ;;*****************************************************
-(defrecord Rating [average votes])
+(defrecord Rating [average votes userRating])
 
 ;;*****************************************************
 ;; Read from a file
@@ -73,13 +73,21 @@
                         (fields :genre)
                         (join "movie_genre" (= :movie_genre.movie_id id))
                         (where (= :genre.id :movie_genre.genre_id))))))
-
+ 
 (defn get-movie-rating
   [movie_id]
   (into {} (select "avg_rating"
                    (fields :rating :nr_votes)
                    (where (= :movie_id movie_id)))))
 
+(defn get-movie-rating-user
+  [user_id movie_id]
+  (let [avg_rating (get-movie-rating movie_id)
+        user_rating  (into {} (select "rating"
+                                      (fields [:rating :user_rating])
+                                      (where {:user_id [= user_id]
+                                              :movie_id [= movie_id]})))]
+    (conj avg_rating user_rating)))
 
 ;;*****************************************************
 ;; Record creation
@@ -105,6 +113,26 @@
                    (:mature_rating_id row))]
     m))
 
+(defn create-movie-user
+  "Creates a movie record from a hash of movie values"
+  [user row]
+  (let [genres (all-movie-genres (:id row))
+        rating (get-movie-rating-user user (:id row))
+        m (->Movie (:id row)
+                   (:title row)
+                   (:description row)
+                   (:picture row)
+                   (:year row)
+                   (:runtime row)
+                   genres
+                   rating
+                   (:characters row)
+                   (:writer row)
+                   (:director row)
+                   (:stars row)
+                   (:mature_rating_id row))]
+    m))
+
 ;; create-user : {:key val...} -> User Record
 (defn create-user
   "Creates a user record from a hash of user values"
@@ -114,11 +142,19 @@
         password (:password row)
         u (->User id email password)]
     u))
-
+;; create rating 
 (defn create-rating
   [row]
   (let [r (->Rating (:rating row)
-                    (:nr_votes row))]
+                    (:nr_votes row)
+                    nil)]
+    r))
+;; create user-rating
+(defn create-user-rating 
+  [row]
+  (let [r (->Rating (:rating row)
+                    (:nr_votes row)
+                    (:user_rating row))]
     r))
 
 
@@ -239,10 +275,15 @@
                    (and (= (key x) :title) (not-nil? (val x))) {:title ['like (val x)]})) 
                 args)))
 
+
 (defn search-movie [& {:keys [genres runtime year title] :as args}]
   (map create-movie (select "movie"
                             (where (create-constraints :genres genres :runtime runtime :year year :title title)))))
 
+;; query for user rating
+(defn search-movie-user [user & {:keys [genres runtime year title] :as args}]
+  (map (partial create-movie-user user) (select "movie"
+                                                (where (create-constraints :genres genres :runtime runtime :year year :title title)))))
 
 (defn random-movie
   []

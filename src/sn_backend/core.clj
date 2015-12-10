@@ -31,6 +31,10 @@
   [req]
   (handle-request req search/search-movie 400 200))
 
+(defn search-for-movie-with-user
+  [req]
+  (handle-request req search/search-movie-user 400 200))
+
 (defn get-random-movie
   []
   (response (search/random-movie)))
@@ -67,6 +71,8 @@
   (GET "/" [] (response {}))
   (PUT "/search/movie" request
        (search-for-movie request))
+  (PUT "/search/movie/user" request
+       (search-for-movie-with-user request))
   (GET "/search/random" request
        (get-random-movie))
   (PUT "/movie/rating" request

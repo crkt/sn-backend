@@ -2,6 +2,7 @@
   (:require [sn-backend.db :as db])
   (:gen-class))
 
+;; update rating for user
 (defn update-rating
   [body]
   (let [movie_id (:movie body)
@@ -18,3 +19,4 @@
 (defn all-movies
   []
   (db/get-all-movies))
+
