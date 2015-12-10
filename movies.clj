@@ -897,6 +897,45 @@
  :stars "Jürgen Prochnow, Herbert Grönemeyer, Klaus Wennemann"
  :genres ["adventure" "drama" "thriller"]
 }
+{:title "Star Wars: Episode VI - Return of the Jedi"
+ :description "After rescuing Han Solo from the palace of Jabba the Hutt, the rebels attempt to destroy the second Death Star, while Luke struggles to make Vader return from the dark side of the Force."
+ :picture "http://ia.media-imdb.com/images/M/MV5BMTQ0MzI1NjYwOF5BMl5BanBnXkFtZTgwODU3NDU2MTE@._V1._CR93,97,1209,1861_SX214_AL_.jpg"
+ :year 1983
+ :country_id 1
+ :characters "Luke Skywalker, Han Solo, Princess Leia"
+ :runtime 131
+ :mature_rating_id "PG-13"
+ :director "Richard Marquand"
+ :writer "Lawrence Kasdan, George Lucas"
+ :stars "Mark Hamill, Harrison Ford, Carrie Fisher"
+ :genres ["action" "adventure" "fantasy"]
+}
+{:title "Once Upon a Time in America"
+ :description "A former Prohibition-era Jewish gangster returns to the Lower East Side of Manhattan over thirty years later, where he once again must confront the ghosts and regrets of his old life."
+ :picture "http://ia.media-imdb.com/images/M/MV5BNDMwMDcyODkzOV5BMl5BanBnXkFtZTcwNTQ1Njg3OA@@._V1_SY317_CR5,0,214,317_AL_.jpg"
+ :year 1984
+ :country_id 1
+ :characters "David 'Noodles' Aaronson, Maximilian 'Max' Bercovicz, Deborah Gelly"
+ :runtime 229
+ :mature_rating_id "PG"
+ :director "Sergio Leone"
+ :writer "Harry Grey, Leonardo Benvenuti"
+ :stars "Robert De Niro, James Woods, Elizabeth McGovern"
+ :genres ["crime" "drama"]
+}
+{:title "M"
+ :description "When the police in a German city are unable to catch a child-murderer, other criminals join in the manhunt."
+ :picture "http://ia.media-imdb.com/images/M/MV5BMTQyNjA5NzU5MV5BMl5BanBnXkFtZTgwMDk1MTA5MTE@._V1_SY317_CR4,0,214,317_AL_.jpg"
+ :year 1931
+ :country_id 1
+ :characters "Hans Beckert, Frau Beckmann, Elsie Beckmann"
+ :runtime 117
+ :mature_rating_id "R"
+ :director "Fritz Lang"
+ :writer "Thea von Harbou, Fritz Lang"
+ :stars "Peter Lorre, Ellen Widmann, Inge Landgut"
+ :genres ["crime" "drama" "thriller"]
+}
 {:title ""
  :description ""
  :picture ""
@@ -910,4 +949,213 @@
  :stars ""
  :genres ["" ""]
 }
+{:title ""
+ :description ""
+ :picture ""
+ :year 
+ :country_id 
+ :characters ""
+ :runtime 
+ :mature_rating_id ""
+ :director ""
+ :writer ""
+ :stars ""
+ :genres ["" ""]
+}
+{:title ""
+ :description ""
+ :picture ""
+ :year 
+ :country_id 
+ :characters ""
+ :runtime 
+ :mature_rating_id ""
+ :director ""
+ :writer ""
+ :stars ""
+ :genres ["" ""]
+}
+{:title ""
+ :description ""
+ :picture ""
+ :year 
+ :country_id 
+ :characters ""
+ :runtime 
+ :mature_rating_id ""
+ :director ""
+ :writer ""
+ :stars ""
+ :genres ["" ""]
+}
+{:title ""
+ :description ""
+ :picture ""
+ :year 
+ :country_id 
+ :characters ""
+ :runtime 
+ :mature_rating_id ""
+ :director ""
+ :writer ""
+ :stars ""
+ :genres ["" ""]
+}
+{:title ""
+ :description ""
+ :picture ""
+ :year 
+ :country_id 
+ :characters ""
+ :runtime 
+ :mature_rating_id ""
+ :director ""
+ :writer ""
+ :stars ""
+ :genres ["" ""]
+}
+{:title ""
+ :description ""
+ :picture ""
+ :year 
+ :country_id 
+ :characters ""
+ :runtime 
+ :mature_rating_id ""
+ :director ""
+ :writer ""
+ :stars ""
+ :genres ["" ""]
+}
+{:title ""
+ :description ""
+ :picture ""
+ :year 
+ :country_id 
+ :characters ""
+ :runtime 
+ :mature_rating_id ""
+ :director ""
+ :writer ""
+ :stars ""
+ :genres ["" ""]
+}
+{:title ""
+ :description ""
+ :picture ""
+ :year 
+ :country_id 
+ :characters ""
+ :runtime 
+ :mature_rating_id ""
+ :director ""
+ :writer ""
+ :stars ""
+ :genres ["" ""]
+}
+{:title ""
+ :description ""
+ :picture ""
+ :year 
+ :country_id 
+ :characters ""
+ :runtime 
+ :mature_rating_id ""
+ :director ""
+ :writer ""
+ :stars ""
+ :genres ["" ""]
+}
+{:title ""
+ :description ""
+ :picture ""
+ :year 
+ :country_id 
+ :characters ""
+ :runtime 
+ :mature_rating_id ""
+ :director ""
+ :writer ""
+ :stars ""
+ :genres ["" ""]
+}
+{:title ""
+ :description ""
+ :picture ""
+ :year 
+ :country_id 
+ :characters ""
+ :runtime 
+ :mature_rating_id ""
+ :director ""
+ :writer ""
+ :stars ""
+ :genres ["" ""]
+}
+{:title ""
+ :description ""
+ :picture ""
+ :year 
+ :country_id 
+ :characters ""
+ :runtime 
+ :mature_rating_id ""
+ :director ""
+ :writer ""
+ :stars ""
+ :genres ["" ""]
+}
+{:title ""
+ :description ""
+ :picture ""
+ :year 
+ :country_id 
+ :characters ""
+ :runtime 
+ :mature_rating_id ""
+ :director ""
+ :writer ""
+ :stars ""
+ :genres ["" ""]
+}
+{:title ""
+ :description ""
+ :picture ""
+ :year 
+ :country_id 
+ :characters ""
+ :runtime 
+ :mature_rating_id ""
+ :director ""
+ :writer ""
+ :stars ""
+ :genres ["" ""]
+}
+{:title ""
+ :description ""
+ :picture ""
+ :year 
+ :country_id 
+ :characters ""
+ :runtime 
+ :mature_rating_id ""
+ :director ""
+ :writer ""
+ :stars ""
+ :genres ["" ""]
+}
+{:title ""
+ :description ""
+ :picture ""
+ :year 
+ :country_id 
+ :characters ""
+ :runtime 
+ :mature_rating_id ""
+ :director ""
+ :writer ""
+ :stars ""
+ :genres ["" ""]
+}
+
 ]
