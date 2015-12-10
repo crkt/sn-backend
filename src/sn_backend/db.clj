@@ -166,6 +166,10 @@
   (not (nil? (first (select "rating"
                             (where {:user_id [= user_id]
                                     :movie_id [= movie_id]}))))))
+									
+(defn does-genre-exist? [genre]
+	(not (nil? (first (select "genre"
+							(where {:genre genre}))))))
 
 (defn update-rating 
   [movie_id rating user_id]  
@@ -184,6 +188,34 @@
   (into {} (select "rating"
                    (where {:user_id [= user_id]
                            :movie_id [= movie_id]}))))
+						   
+(defn insert-genre [genre]
+	(if (does-genre-exist? genre)
+		nil
+		(insert "genre"
+			(values {:genre genre}))))        
+			
+(defn add-genre-to-movie [id genre]
+	(insert "movie_genre"
+		(values {:movie_id id :genre_id genre}])))
+						   
+(defn insert-movies 
+  [movie]
+  (let [movie_id (:generated-key (insert "movie"
+						(values {:title (:title movie)
+								:description (:description movie)
+								:picture (:picture movie)
+								:year (:year movie)
+								:country_id (:country_id movie)
+								:characters (:characters movie)
+								:runtime (:runtime movie)
+								:mature_rating_id (:mature_rating_id movie)
+								:director (:director movie)
+								:writer (:writer movie)
+								:stars (:stars movie)
+					   })))]
+	(map insert-genre (:genres movie))
+	(map (partial add-genre-to-movie movie_id) (genres-q (:genres movie)))))
 
 (defn get-all-genres
   []
