@@ -231,7 +231,7 @@
 (defn read-movies []
   (let [movies (read-from-file-with-trusted-content "movies.clj")]
     (map insert-movie movies)
-    nil))	
+    nil))
 
 ;;*****************************************************
 ;; User queries
