@@ -89,6 +89,8 @@
                                               :movie_id [= movie_id]})))]
     (conj avg_rating user_rating)))
 
+
+
 ;;*****************************************************
 ;; Record creation
 ;;*****************************************************
@@ -224,6 +226,17 @@
 (defn get-all-movies
   []
   (map create-movie (select "movie")))
+  
+  (defn get-user-rated-movies
+	[user_id]
+	(into [] (select "rating"
+					(fields [:movie_id])
+					(where  (= :user_id user_id)))))
+
+(defn get-rated-movies
+	[user_id]
+	(into [] (map create-movie (select "movie"
+					(where {:id [in (get-user-rated-movies user_id)]})))))
 
 ;;*****************************************************
 ;; User queries
