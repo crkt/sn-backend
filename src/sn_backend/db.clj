@@ -226,17 +226,21 @@
 (defn get-all-movies
   []
   (map create-movie (select "movie")))
+
+(defn movie_id
+  [movie]
+  (:movie_id movie))
   
-  (defn get-user-rated-movies
-	[user_id]
-	(into [] (select "rating"
-					(fields [:movie_id])
-					(where  (= :user_id user_id)))))
+(defn get-user-rated-movies
+  [user_id]
+  (into [] (map movie_id (select "rating"
+                                 (fields [:movie_id])
+                                 (where  (= :user_id user_id))))))
 
 (defn get-rated-movies
-	[user_id]
-	(into [] (map create-movie (select "movie"
-					(where {:id [in (get-user-rated-movies user_id)]})))))
+  [user_id]
+  (into [] (map create-movie (select "movie"
+                                     (where {:id [in (get-user-rated-movies user_id)]})))))
 
 (defn get-movie
   [id]

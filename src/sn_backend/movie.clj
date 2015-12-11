@@ -21,8 +21,8 @@
   (db/get-all-movies))
   
 (defn get-user-rated-movies
-	[body]
-	(db/get-user-rated-movies (:user body)))
+  [body]
+  (db/get-rated-movies (:user body)))
 
 (defn get-movie
   [body]

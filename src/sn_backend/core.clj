@@ -86,7 +86,7 @@
   (PUT "/movie/rating" request
        (change-rating request))
   (PUT "/user/rated" request
-		(get-user-rated-movies request))
+       (get-user-rated-movies request))
   (GET "/movie/genres" request
        (get-genres))
   (GET "/movie/all" request
