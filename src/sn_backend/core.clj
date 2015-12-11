@@ -53,6 +53,10 @@
   []
   (movie/all-movies))
 
+(defn get-user-rated-movies
+	[req]
+	(handle-request req movie/get-user-rated-movies 400 200))
+	
 (defn create-user
   "Creates a user in the database, if the email is taken returns an error object. Refer to the user file to see what it contains."
   [req]
@@ -77,6 +81,8 @@
        (get-random-movie))
   (PUT "/movie/rating" request
        (change-rating request))
+  (PUT "/user/rated" request
+		(get-user-rated-movies request))
   (GET "/movie/genres" request
        (get-genres))
   (GET "/movie/all" request
