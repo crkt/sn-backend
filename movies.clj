@@ -979,7 +979,7 @@
  :description "When his secret bride is executed for assaulting an English soldier who tried to rape her, William Wallace begins a revolt and leads Scottish warriors against the cruel English tyrant who rules Scotland with an iron fist."
  :picture "http://ia.media-imdb.com/images/M/MV5BNjA4ODYxMDU3Nl5BMl5BanBnXkFtZTcwMzkzMTk3OA@@._V1_SX214_AL_.jpg"
  :year 1995
- :country_id 
+ :country_id 1
  :characters "Young William, Malcolm Wallace, John Wallace"
  :runtime 178
  :mature_rating_id "PG"
@@ -1001,7 +1001,7 @@
  :stars "Tom Hanks, Tim Allen, Joan Cusack"
  :genres ["animation" "adventure" "comedy"]
 }
-{:title " A Clockwork Orange"
+{:title "A Clockwork Orange"
  :description "In future Britain, charismatic delinquent Alex DeLarge is jailed and volunteers for an experimental aversion therapy developed by the government in an effort to solve society's crime problem - but not all goes according to plan."
  :picture "http://ia.media-imdb.com/images/M/MV5BMTY3MjM1Mzc4N15BMl5BanBnXkFtZTgwODM0NzAxMDE@._V1_SY317_CR0,0,214,317_AL_.jpg"
  :year 1971
@@ -1014,148 +1014,4 @@
  :stars "Malcolm McDowell, Patrick Magee, Michael Bates"
  :genres ["crime" "drama" "sci-fi"]
 }
-{:title ""
- :description ""
- :picture ""
- :year 
- :country_id 
- :characters ""
- :runtime 
- :mature_rating_id ""
- :director ""
- :writer ""
- :stars ""
- :genres ["" ""]
-}
-{:title ""
- :description ""
- :picture ""
- :year 
- :country_id 
- :characters ""
- :runtime 
- :mature_rating_id ""
- :director ""
- :writer ""
- :stars ""
- :genres ["" ""]
-}
-{:title ""
- :description ""
- :picture ""
- :year 
- :country_id 
- :characters ""
- :runtime 
- :mature_rating_id ""
- :director ""
- :writer ""
- :stars ""
- :genres ["" ""]
-}
-{:title ""
- :description ""
- :picture ""
- :year 
- :country_id 
- :characters ""
- :runtime 
- :mature_rating_id ""
- :director ""
- :writer ""
- :stars ""
- :genres ["" ""]
-}
-{:title ""
- :description ""
- :picture ""
- :year 
- :country_id 
- :characters ""
- :runtime 
- :mature_rating_id ""
- :director ""
- :writer ""
- :stars ""
- :genres ["" ""]
-}
-{:title ""
- :description ""
- :picture ""
- :year 
- :country_id 
- :characters ""
- :runtime 
- :mature_rating_id ""
- :director ""
- :writer ""
- :stars ""
- :genres ["" ""]
-}
-{:title ""
- :description ""
- :picture ""
- :year 
- :country_id 
- :characters ""
- :runtime 
- :mature_rating_id ""
- :director ""
- :writer ""
- :stars ""
- :genres ["" ""]
-}
-{:title ""
- :description ""
- :picture ""
- :year 
- :country_id 
- :characters ""
- :runtime 
- :mature_rating_id ""
- :director ""
- :writer ""
- :stars ""
- :genres ["" ""]
-}
-{:title ""
- :description ""
- :picture ""
- :year 
- :country_id 
- :characters ""
- :runtime 
- :mature_rating_id ""
- :director ""
- :writer ""
- :stars ""
- :genres ["" ""]
-}
-{:title ""
- :description ""
- :picture ""
- :year 
- :country_id 
- :characters ""
- :runtime 
- :mature_rating_id ""
- :director ""
- :writer ""
- :stars ""
- :genres ["" ""]
-}
-{:title ""
- :description ""
- :picture ""
- :year 
- :country_id 
- :characters ""
- :runtime 
- :mature_rating_id ""
- :director ""
- :writer ""
- :stars ""
- :genres ["" ""]
-}
-
 ]

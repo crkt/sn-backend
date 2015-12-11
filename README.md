@@ -2,6 +2,9 @@
 
 The sortnight backend, designed to handle requests and add movies to a database.
 
+## Wiki
+Refer to [Wiki](https://github.com/Fruitschinpo/sn-backend/wiki)
+
 ## Usage
 
 ### How to run

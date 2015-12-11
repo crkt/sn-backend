@@ -24,3 +24,7 @@
 	[body]
 	(db/get-user-rated-movies (:user body)))
 
+(defn get-movie
+  [body]
+  (db/get-movie (:movie body)))
+
