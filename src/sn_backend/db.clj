@@ -225,11 +225,16 @@
   []
   (map create-movie (select "movie")))
 
+(defn get-movie
+  [id]
+  (into {} (map create-movie (select "movie"
+                                     (where {:id [= id]})))))
+
 ;;*****************************************************
 ;; Movie generation
 ;;*****************************************************
 (defn read-movies []
-  (let [movies (read-from-file-with-trusted-content "movies.clj")]
+  (let [movies (read-from-file-with-trusted-contents "movies.clj")]
     (map insert-movie movies)
     nil))
 

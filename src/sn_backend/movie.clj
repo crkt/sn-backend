@@ -20,3 +20,7 @@
   []
   (db/get-all-movies))
 
+(defn get-movie
+  [body]
+  (db/get-movie (:movie body)))
+
