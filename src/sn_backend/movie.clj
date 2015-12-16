@@ -30,5 +30,5 @@
 
 (defn register-movie
 	[body]			 
-	(db/insert-movie (rename-keys body {:plot :description, :directors :director, :writers :writer, :mature :mature_rating_id})
+	(db/insert-movie (rename-keys body {:plot :description, :directors :director, :writers :writer, :mature :mature_rating_id})))
 	
