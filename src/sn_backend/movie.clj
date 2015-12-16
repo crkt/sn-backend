@@ -1,5 +1,6 @@
 (ns sn-backend.movie
-  (:require [sn-backend.db :as db])
+  (:require [sn-backend.db :as db]
+            [clojure.set :refer :all)
   (:gen-class))
 
 ;; update rating for user
@@ -29,6 +30,6 @@
   (db/get-movie (:movie body)))
 
 (defn register-movie
-	[body]			 
-	(db/insert-movie (rename-keys body {:plot :description, :directors :director, :writers :writer, :mature :mature_rating_id})
+  [body]			 
+  (db/insert-movie (rename-keys body {:plot :description, :directors :director, :writers :writer, :mature :mature_rating_id})
 	
