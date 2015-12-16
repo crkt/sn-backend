@@ -54,12 +54,12 @@
   (movie/all-movies))
   
 (defn register-movie
-	[req]
-	(handle-request req movie/register-movie 400 202))
+  [req]
+  (handle-request req movie/register-movie 400 202))
 
 (defn get-user-rated-movies
-	[req]
-	(handle-request req movie/get-user-rated-movies 400 200))
+  [req]
+  (handle-request req movie/get-user-rated-movies 400 200))
 	
 (defn get-movie
   [req]
@@ -97,7 +97,7 @@
        (get-movies))
   (PUT "/movie/id" request
        (get-movie request))
-  (POST “/movie/register” request
+  (POST "/movie/register" request
 		(register-movie request))
   (POST "/user/register" request
         (create-user request))
