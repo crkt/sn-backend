@@ -52,6 +52,10 @@
 (defn get-movies
   []
   (movie/all-movies))
+  
+(defn register-movie
+	[req]
+	(handle-request req movie/register-movie 400 202))
 
 (defn get-user-rated-movies
 	[req]
@@ -93,6 +97,8 @@
        (get-movies))
   (PUT "/movie/id" request
        (get-movie request))
+  (POST “/movie/register” request
+		(register-movie request))
   (POST "/user/register" request
         (create-user request))
   (PUT "/user/login" request
