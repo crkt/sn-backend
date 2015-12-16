@@ -53,7 +53,7 @@ create table movie_genre (movie_id integer,
                          FOREIGN KEY (genre_id) REFERENCES genre(id));
 
 
-source triggers.sql
-source movies.sql
+source triggers.sql;
+source movies.sql;
 
 insert into users (username,email, password) values ("crock","phil@mail.com", "secret");
