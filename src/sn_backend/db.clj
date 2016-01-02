@@ -170,7 +170,7 @@
 									
 (defn does-genre-exist? [genre]
 	(not (nil? (first (select "genre"
-							(where {:genre genre}))))))
+                                  (where {:genre genre}))))))
 
 (defn update-rating 
   [movie_id rating user_id]  
@@ -178,17 +178,13 @@
               (set-fields {:rating rating})
               (where {:user_id [= user_id]
                       :movie_id [= movie_id]}))
-  (into {} (select "rating"
-                   (where {:user_id [= user_id]
-                           :movie_id [= movie_id]}))))
+  (get-movie-rating-user user_id movie_id))
 
 (defn insert-rating
   [movie_id rating user_id]
   (insert "rating"
           (values {:user_id user_id :movie_id movie_id :rating rating}))
-  (into {} (select "rating"
-                   (where {:user_id [= user_id]
-                           :movie_id [= movie_id]}))))
+  (get-movie-rating-user user_id movie_id))
 						   
 (defn insert-genre [genre]
 	(if (does-genre-exist? genre)
@@ -246,6 +242,11 @@
   [id]
   (into {} (map create-movie (select "movie"
                                      (where {:id [= id]})))))
+
+(defn get-movie-with-user-rating
+  [id user]
+  (into {} (map (partial create-movie-user user)) (select "movie"
+                                                          (where {:id [= id]}))))
 
 ;;*****************************************************
 ;; Movie generation

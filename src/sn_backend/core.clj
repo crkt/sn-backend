@@ -98,7 +98,7 @@
   (PUT "/movie/id" request
        (get-movie request))
   (POST "/movie/register" request
-		(register-movie request))
+        (register-movie request))
   (POST "/user/register" request
         (create-user request))
   (PUT "/user/login" request
