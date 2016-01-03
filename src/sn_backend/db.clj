@@ -301,8 +301,8 @@
   (into {} (map (fn [x]
                   (cond
                    (and (= (key x) :genres) (and (not-nil? (val x)) (not-empty? (val x)))) {:id ['in (movie-genres-q (val x))]}
-                   (and (= (key x) :runtime) (not-nil? (val x))) {:runtime ['= (val x)]}
-                   (and (= (key x) :year) (not-nil? (val x))) {:year ['= (val x)]}
+                   (and (= (key x) :runtime) (not-nil? (val x))) {:runtime ['between (vector (:min (val x)) (:max (val x)))]}
+                   (and (= (key x) :year) (not-nil? (val x))) {:year ['between (vector (:min (val x)) (:max (val x)))]}
                    (and (= (key x) :title) (not-nil? (val x))) {:title ['like (str "%" (val x) "%")]})) 
                 args)))
 
