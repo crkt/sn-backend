@@ -12,4 +12,5 @@
                  [dire "0.5.3"]
                  [mysql/mysql-connector-java "5.1.18"]
                  ]
+  :profiles {:movies {:main sn-backend.db}}
   :main sn-backend.core)
