@@ -22,6 +22,13 @@ You can then test to go to http://localhost:3000 and see that the server is runn
 
 You did it!
 
+### Profiles
+movies - This profile will read the movies.clj file and add them all to the database. Make sure and run the db.sql query file before ruinning this profile. To run it type:
+```
+lein with-profile movies run
+```
+Afterwards you'll have all the movies in the file.
+
 ## License
 
 Copyright © 2015 SortNight
