@@ -255,7 +255,7 @@
 ;;*****************************************************
 (defn read-movies []
   (let [movies (read-from-file-with-trusted-contents "movies.clj")]
-    (map insert-movie movies)))
+    (dorun (map insert-movie movies))))
 
 ;;*****************************************************
 ;; User queries
@@ -320,3 +320,8 @@
 (defn random-movie
   []
   (rand-nth (map create-movie (select "movie"))))
+
+(defn -main
+  "Adds all the movies found in movies.clj"
+  []
+  (read-movies))
