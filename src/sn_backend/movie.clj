@@ -27,7 +27,10 @@
 
 (defn get-movie
   [body]
-  (db/get-movie (:movie body)))
+  (let [movie_id (:movie body)]
+    (if (contains? body :user)
+      (db/get-movie-with-user-rating movie_id (:user body))
+      (db/get-movie movie_id))))
 
 (defn register-movie
   [body]

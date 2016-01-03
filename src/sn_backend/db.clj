@@ -187,18 +187,20 @@
   (get-movie-rating-user user_id movie_id))
 						   
 (defn insert-genre [genre]
-	(if (does-genre-exist? genre)
-		nil
-		(insert "genre"
-			(values {:genre genre}))))        
+  (println "Checking if genre needs to be added" genre)
+  (if (does-genre-exist? genre)
+    nil
+    (insert "genre"
+            (values {:genre genre}))))        
 			
-(defn add-genre-to-movie [id genre]
-	(insert "movie_genre"
-		(values {:movie_id id :genre_id genre})))
-						   
+(defn add-genre-to-movie [id genre]  
+  (println "Adding genre to movie" id "and genre" genre)
+  (insert "movie_genre"
+          (values {:movie_id id :genre_id genre})))
+
 (defn insert-movie
   [movie]
-  (let [movie_id (:generated-key (insert "movie"
+  (let [movie_id (:generated_key (insert "movie"
                                          (values {:title (:title movie)
                                                   :description (:description movie)
                                                   :picture (:picture movie)
@@ -211,9 +213,9 @@
                                                   :writer (:writer movie)
                                                   :stars (:stars movie)
                                                   })))]
-    (map insert-genre (:genres movie))
-    (map (partial add-genre-to-movie movie_id) (genres-q (:genres movie)))
-    nil))
+    (dorun (map insert-genre (:genres movie)))
+    (dorun (map (partial add-genre-to-movie movie_id) (genres-q (:genres movie))))
+    {:id movie_id}))
 
 (defn get-all-genres
   []
@@ -253,8 +255,7 @@
 ;;*****************************************************
 (defn read-movies []
   (let [movies (read-from-file-with-trusted-contents "movies.clj")]
-    (map insert-movie movies)
-    nil))
+    (map insert-movie movies)))
 
 ;;*****************************************************
 ;; User queries
@@ -319,8 +320,3 @@
 (defn random-movie
   []
   (rand-nth (map create-movie (select "movie"))))
-
-
-(-> (select* "movie")
-    (where {:title [like "dark"]})
-    (as-sql))

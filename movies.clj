@@ -300,7 +300,7 @@
 }
 {:title "The Usual Suspects"
  :description "A sole survivor tells of the twisty events leading up to a horrific gun battle on a boat, which begin when five criminals meet at a seemingly random police lineup."
- :picture "http://ia.media-imdb.com/images/M/MV5BMTQ2NzkzMDI4OF5BMl5BanBnXkFtZTcwMDA0NzE1NA@@._V1_SX214_AL_.jpg"
+ :picture "http://ia.media-imdb.com/images/M/MV5BMzI1MjI5MDQyOV5BMl5BanBnXkFtZTcwNzE4Mjg3NA@@._V1__SX1859_SY1056_.jpg"
  :year 1995
  :country_id 1
  :characters "McManus, Keaton, Fenster"

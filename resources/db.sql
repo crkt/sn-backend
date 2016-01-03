@@ -15,7 +15,7 @@ create table genre (id integer AUTO_INCREMENT PRIMARY KEY,
                    genre varchar(30));
 
 create table movie (id integer AUTO_INCREMENT PRIMARY KEY, 
-                   title varchar(50), 
+                   title varchar(100), 
                    year integer,
                    picture text,
                    country_id integer,
@@ -54,6 +54,4 @@ create table movie_genre (movie_id integer,
 
 
 source triggers.sql;
-source movies.sql;
-
-insert into users (username,email, password) values ("crock","phil@mail.com", "secret");
+/*source movies.sql;*/
