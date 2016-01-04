@@ -11,6 +11,12 @@
             [sn-backend.movie :as movie])
   (:gen-class))
 
+;;*****************************************************
+;; Routes
+;; This file handles the routing of the server.
+;; Uses ring and compojure libraries for routing.
+;;*****************************************************
+
 
 ;; handle-request : map{} function number number -> http response
 (defmacro handle-request 
@@ -32,36 +38,44 @@
   (handle-request req search/search-movie 400 200))
 
 (defn search-for-movie-with-user
+  "Performs a search with a user account in the request object.
+  To get the users rating of movies."
   [req]
   (handle-request req search/search-movie-user 400 200))
 
 (defn get-random-movie
+  "Gets a random movie from the database."
   []
   (response (search/random-movie)))
 
 (defn change-rating
+  "Changes the rating of a movie."
   [req]
   (handle-request req movie/update-rating 400 200))
 
 
-;; Fix this into a macro?
 (defn get-genres
+  "Get all genres"
   []
   (movie/all-genres))
 
 (defn get-movies
+  "Get all movies"
   []
   (movie/all-movies))
   
 (defn register-movie
+  "Registers a movie object to the database"
   [req]
   (handle-request req movie/register-movie 400 202))
 
 (defn get-user-rated-movies
+  "Get's the users rated movies."
   [req]
   (handle-request req movie/get-user-rated-movies 400 200))
 	
 (defn get-movie
+  "Expects an id of a movie to get the movie."
   [req]
   (handle-request req movie/get-movie 400 200))
 
