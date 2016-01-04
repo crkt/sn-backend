@@ -29,6 +29,16 @@ lein with-profile movies run
 ```
 Afterwards you'll have all the movies in the file.
 
+## Database
+Check the [Database](https://github.com/Fruitschinpo/sn-backend/wiki/Configuration)
+To read about how to configure the database for use.
+
+## Running the JAR file
+```
+java -jar <project>-<version>-standalone.jar
+```
+This will run the server on port 3000.
+
 ## License
 
 Copyright © 2015 SortNight
