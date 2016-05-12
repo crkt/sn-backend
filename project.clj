@@ -1,4 +1,4 @@
-(defproject sn-backend "0.1.0-SNAPSHOT"
+(defproject sn-backend "1.0.0-SNAPSHOT"
   :description "The backend of the Sort Night application, this is a restful web service."
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
@@ -13,4 +13,5 @@
                  [mysql/mysql-connector-java "5.1.18"]
                  ]
   :profiles {:movies {:main sn-backend.db}}
-  :main sn-backend.core)
+  :main sn-backend.core
+  :aot [sn-backend.core])
